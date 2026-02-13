@@ -1,0 +1,27 @@
+@config "../../tailwind.config.mjs";
+@import "tailwindcss";
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(236, 182, 19, 0.2);
+  color: transparent;
+}
+
+.nav-sticky {
+  transition: all 0.3s ease-in-out;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro';
+import logoHorizontal from '../assets/logo-horizontal.png';
+---
+
+<Layout title="EPP TOTAL | Seguridad Industrial de Vanguardia">
+	<!-- Navigation -->
+	<nav class="fixed top-0 w-full z-50 nav-sticky bg-white/10 backdrop-blur-md border-b border-white/10">
+		<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+			<div class="flex items-center space-x-2">
+				<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-8 w-auto" loading="eager" />
+				
+				<!-- <span class="text-2xl font-bold tracking-tighter text-deep-blue dark:text-white uppercase">
+					EPP<span class="text-primary">TOTAL</span>
+				</span> -->
+			</div>
+			<div class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest text-deep-blue/80 dark:text-white/80">
+				<a class="hover:text-primary transition-colors" href="#">Inicio</a>
+				<a class="hover:text-primary transition-colors" href="#">Productos</a>
+				<a class="hover:text-primary transition-colors" href="#">Servicios</a>
+				<a class="hover:text-primary transition-colors" href="#">Nosotros</a>
+				<a class="hover:text-primary transition-colors" href="#">Contacto</a>
+			</div>
+			<div class="flex items-center space-x-6">
+				<button class="material-icons text-deep-blue dark:text-white">search</button>
+				<button class="bg-primary text-white px-6 py-2 rounded-lg font-semibold text-sm hover:bg-primary/90 transition-all uppercase tracking-wider">
+					Cotizar
+				</button>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section class="relative h-screen flex items-center overflow-hidden">
+		<div class="absolute inset-0 z-0">
+			<div class="absolute inset-0 bg-gradient-to-r from-deep-blue via-deep-blue/60 to-transparent z-10"></div>
+			<img
+				class="w-full h-full object-cover"
+				data-alt="Modern industrial worker wearing high-tech safety gear"
+				src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBFXHPVG4SculurCDrtmYcsUmcaAEOBcXEn9uY9Anipi0xDqDhz1RZta2TvLXii_LlkRe_kf9Zr2grfLG4ZoFFYSr_EU7nAO_ZpzjXI-zMixTPtFZ8R-VAgDR5HI978TI4mzd8O7x6VKamPCkt3Wftg-MLL2ZLuGbBWujdmTcPdFqdwpPDpBLCmIp8D1cVWLVA0mfOFnnYtIMsKGXpCrxWWz9f_oU0tWNLmI5NOopBnku6Y7KH3vrFO8be3v8WjH7T3zhMgq5mcU"
+			/>
+		</div>
+		<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
+			<div class="max-w-2xl">
+				<span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Seguridad 4.0</span>
+				<h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
+					Seguridad <span class="italic font-normal">Industrial</span> de <span class="font-display font-bold text-primary">Vanguardia</span>
+				</h1>
+				<p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
+					Protegiendo el futuro de tu industria con tecnología de última generación y asesoría técnica especializada.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4">
+					<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20">
+						Explorar Catálogo
+					</button>
+					<button class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+						Asesoría Técnica
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="absolute bottom-10 right-10 z-20 hidden lg:block">
+			<div class="flex flex-col space-y-4">
+				<div class="h-1 w-20 bg-primary"></div>
+				<div class="h-1 w-12 bg-white/20"></div>
+				<div class="h-1 w-12 bg-white/20"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats Bar -->
+	<section class="relative z-30 -mt-16 max-w-5xl mx-auto px-6">
+		<div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+			<div class="text-center">
+				<div class="text-4xl font-bold text-deep-blue dark:text-white mb-1">500+</div>
+				<div class="text-xs uppercase tracking-widest text-primary font-bold">Clientes Felices</div>
+			</div>
+			<div class="text-center border-l border-gray-100 dark:border-zinc-800">
+				<div class="text-4xl font-bold text-deep-blue dark:text-white mb-1">10+</div>
+				<div class="text-xs uppercase tracking-widest text-primary font-bold">Años de Éxito</div>
+			</div>
+			<div class="text-center border-l border-gray-100 dark:border-zinc-800">
+				<div class="text-4xl font-bold text-deep-blue dark:text-white mb-1">25k+</div>
+				<div class="text-xs uppercase tracking-widest text-primary font-bold">Equipos Entregados</div>
+			</div>
+			<div class="text-center border-l border-gray-100 dark:border-zinc-800">
+				<div class="text-4xl font-bold text-deep-blue dark:text-white mb-1">100%</div>
+				<div class="text-xs uppercase tracking-widest text-primary font-bold">Garantía Total</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section (Consultancy) -->
+	<section class="py-32 px-6">
+		<div class="max-w-7xl mx-auto">
+			<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+				<div class="max-w-2xl">
+					<h2 class="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-4">Servicios Especializados</h2>
+					<h3 class="text-5xl font-serif text-deep-blue dark:text-white">
+						Mucho más que una tienda, somos tus <span class="italic">aliados estratégicos</span>.
+					</h3>
+				</div>
+				<div class="text-right">
+					<p class="text-gray-500 max-w-xs mb-4">Ofrecemos soluciones integrales para la prevención de riesgos laborales.</p>
+				</div>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+				<!-- Asymmetric Grid -->
+				<div class="md:col-span-7 bg-white dark:bg-zinc-900 p-12 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all">
+					<div class="absolute top-0 right-0 p-8">
+						<span class="material-icons text-7xl text-primary/10">engineering</span>
+					</div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+							<span class="material-icons text-primary">psychology</span>
+						</div>
+						<h4 class="text-2xl font-bold mb-4 dark:text-white">Consultoría Técnica</h4>
+						<p class="text-gray-500 mb-8 leading-relaxed max-w-md">
+							Identificación de riesgos específicos por área de trabajo y recomendación de EPP optimizados.
+						</p>
+						<a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest hover:translate-x-2 transition-transform" href="#">
+							Saber más <span class="material-icons ml-2 text-sm">arrow_forward</span>
+						</a>
+					</div>
+				</div>
+				<div class="md:col-span-5 bg-deep-blue p-12 rounded-3xl relative overflow-hidden group">
+					<div class="relative z-10 text-white">
+						<div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6">
+							<span class="material-icons text-primary">verified_user</span>
+						</div>
+						<h4 class="text-2xl font-bold mb-4">Auditorías de Seguridad</h4>
+						<p class="text-white/60 mb-8 leading-relaxed">
+							Revisiones exhaustivas de cumplimiento normativo y estado de equipos de protección.
+						</p>
+						<a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest" href="#">
+							Agendar <span class="material-icons ml-2 text-sm">calendar_today</span>
+						</a>
+					</div>
+				</div>
+				<div class="md:col-span-4 bg-primary/10 p-10 rounded-3xl border border-primary/20">
+					<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
+						<span class="material-icons text-white">school</span>
+					</div>
+					<h4 class="text-xl font-bold mb-3 dark:text-white">Capacitación de Uso</h4>
+					<p class="text-gray-500 text-sm">
+						Entrenamos a su personal en el uso correcto y mantenimiento preventivo de cada EPP.
+					</p>
+				</div>
+				<div class="md:col-span-8 glass p-10 rounded-3xl flex items-center">
+					<div class="flex-1">
+						<h4 class="text-xl font-bold mb-3 dark:text-white">Gestión de Inventario Personalizada</h4>
+						<p class="text-gray-500 text-sm max-w-md">
+							Sistemas de reposición automática para que su planta nunca se quede sin protección esencial.
+						</p>
+					</div>
+					<div class="hidden sm:block">
+						<div class="w-24 h-24 rounded-full border-4 border-primary/30 flex items-center justify-center">
+							<span class="material-icons text-primary text-4xl">inventory_2</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Categories Carousel Section -->
+	<section class="py-24 bg-deep-blue overflow-hidden">
+		<div class="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-center">
+			<h2 class="text-4xl text-white font-serif">Categorías <span class="text-primary italic">Destacadas</span></h2>
+			<div class="flex space-x-4">
+				<button class="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-deep-blue transition-all">
+					<span class="material-icons">west</span>
+				</button>
+				<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:scale-105 transition-all">
+					<span class="material-icons">east</span>
+				</button>
+			</div>
+		</div>
+		<div class="flex space-x-8 px-6 overflow-x-auto pb-12 scrollbar-hide">
+			<!-- Category Card 1 -->
+			<div class="min-w-[400px] h-[500px] bg-white/5 rounded-3xl relative group overflow-hidden">
+				<div class="absolute inset-0 flex items-center justify-center opacity-10">
+					<span class="text-9xl font-bold uppercase tracking-tighter text-white">VISUAL</span>
+				</div>
+				<div class="absolute inset-0 p-12 flex flex-col justify-end">
+					<img
+						class="w-full h-64 object-contain mb-8 group-hover:scale-110 transition-transform duration-500"
+						data-alt="Premium protective safety goggles"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuApTFsQndwlI-Q1Ji89KzNgukIxTIMgo3AiCKb9h9p2gzp_lJy7jtKpkjSiwt0UmAfxcwsUgAvAHHD0aaNlfgp7yw7AFPUgIHe_-tE-qXtAql4SiIlV1rFur311p16tFQFaaHuMXGrG8p1Uu8R7WVzXL823rt3G2zvG2LbdMy_ws7KfdWSGj5Zph-xfH2u9WeYGOrjpwkYVPyNHnSux1YR17nu9PYaqp6ejCpUMHMDNs_D6fz6J1gVZhtNR9vuTqb8eg4HTdmOVE0E"
+					/>
+					<h5 class="text-3xl text-white font-bold mb-2">Protección Visual</h5>
+					<p class="text-white/40 mb-6 uppercase tracking-widest text-xs">Lentes, Goggles, Caretas</p>
+					<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+						<span class="material-icons">add</span>
+					</button>
+				</div>
+			</div>
+			<!-- Category Card 2 -->
+			<div class="min-w-[400px] h-[500px] bg-white/5 rounded-3xl relative group overflow-hidden border border-primary/20">
+				<div class="absolute inset-0 flex items-center justify-center opacity-10">
+					<span class="text-9xl font-bold uppercase tracking-tighter text-white">HEAD</span>
+				</div>
+				<div class="absolute inset-0 p-12 flex flex-col justify-end">
+					<img
+						class="w-full h-64 object-contain mb-8 group-hover:scale-110 transition-transform duration-500"
+						data-alt="Professional safety helmet"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnEKmMjfN_DhEszfhSt8CEB_8RDMlY-FGgDvRlxhmR4VD-RdEvUvtzAm7ZFZiUBJbJvHBvDKQv1gHdSlqBeEbNhFeAt4KsD_nbecrGX5bEfZf-5tTxzT0T5IniMx0F2aUf0w95bY4LOBYSDt5MOqL7SNE4eCxntUmJM-9lQ83t-ywiYq277oMQBpJ-aR1DddmellxuduE7jrExacK9QqMlMwru5iJJpmOO1Q3jVG29r9efow0wa4RrnqveKredrwKcaf62ly1BxSc"
+					/>
+					<h5 class="text-3xl text-white font-bold mb-2">Protección Craneal</h5>
+					<p class="text-white/40 mb-6 uppercase tracking-widest text-xs">Cascos, Cofias, Linternas</p>
+					<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+						<span class="material-icons">add</span>
+					</button>
+				</div>
+			</div>
+			<!-- Category Card 3 -->
+			<div class="min-w-[400px] h-[500px] bg-white/5 rounded-3xl relative group overflow-hidden">
+				<div class="absolute inset-0 flex items-center justify-center opacity-10">
+					<span class="text-9xl font-bold uppercase tracking-tighter text-white">HANDS</span>
+				</div>
+				<div class="absolute inset-0 p-12 flex flex-col justify-end">
+					<img
+						class="w-full h-64 object-contain mb-8 group-hover:scale-110 transition-transform duration-500"
+						data-alt="Industrial safety gloves"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Y6Wr__3N7wPQZciwGQG1Jl4_rvpzXRIdkjAauH0C-VhNtPq-Q-3ZTTVOzeVtWAjKIQahvi3AoqSgEPD80qOKsdW2sIBXhS7JBe76vO-XZ3qHdcmU56iv6bpJoCfl_kI3ItDLIGsMyLqhXLFkeVoYsAz2C_m-uYsotdDo3U69ER7fCneewol6YsmmjuNcGF3osA206eypkjD69Hm0bYecfd4uMl9VK_FHIR6n0H5zo2wjGl-6vGrqwwpRTJeYGS4gbPHQ8ZmKsgo"
+					/>
+					<h5 class="text-3xl text-white font-bold mb-2">Protección Manual</h5>
+					<p class="text-white/40 mb-6 uppercase tracking-widest text-xs">Guantes de Nitrilo, Cuero, Anticorte</p>
+					<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+						<span class="material-icons">add</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Partners / Trust -->
+	<section class="py-20 bg-background-light dark:bg-zinc-950">
+		<div class="max-w-7xl mx-auto px-6">
+			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
+			<div class="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+				<span class="text-2xl font-black">INDUSTRIAS-X</span>
+				<span class="text-2xl font-black italic">GLOBAL_CORP</span>
+				<span class="text-2xl font-black">STARK_IND</span>
+				<span class="text-2xl font-black">TECH_MINING</span>
+				<span class="text-2xl font-black italic">CONSTRUC_MAX</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
+		<div class="max-w-7xl mx-auto">
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+				<div class="col-span-1 md:col-span-1">
+					<div class="flex items-center space-x-2 mb-8">
+						<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+							<span class="material-icons text-white text-lg">shield</span>
+						</div>
+						<span class="text-xl font-bold tracking-tighter text-deep-blue dark:text-white uppercase">
+							EPP<span class="text-primary">TOTAL</span>
+						</span>
+					</div>
+					<p class="text-gray-500 text-sm leading-relaxed mb-8">
+						Líderes en suministro y consultoría de seguridad industrial para empresas de alto rendimiento en toda la región.
+					</p>
+					<div class="flex space-x-4">
+						<a
+							class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-all"
+							href="#"
+						>
+							<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+								<path
+									d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+								></path>
+							</svg>
+						</a>
+						<a
+							class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-all"
+							href="#"
+						>
+							<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+								<path
+									d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+								></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div>
+					<h6 class="font-bold text-deep-blue dark:text-white mb-6 uppercase text-xs tracking-widest">Productos</h6>
+					<ul class="space-y-4 text-sm text-gray-500">
+						<li><a class="hover:text-primary transition-colors" href="#">Protección Facial</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Equipos de Altura</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Calzado Industrial</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Ropa de Trabajo</a></li>
+					</ul>
+				</div>
+				<div>
+					<h6 class="font-bold text-deep-blue dark:text-white mb-6 uppercase text-xs tracking-widest">Compañía</h6>
+					<ul class="space-y-4 text-sm text-gray-500">
+						<li><a class="hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Blog de Seguridad</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Certificaciones</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Casos de Éxito</a></li>
+					</ul>
+				</div>
+				<div>
+					<h6 class="font-bold text-deep-blue dark:text-white mb-6 uppercase text-xs tracking-widest">Newsletter</h6>
+					<p class="text-sm text-gray-500 mb-6">Recibe las últimas normativas y ofertas exclusivas.</p>
+					<form class="flex flex-col space-y-3">
+						<input
+							class="bg-gray-50 dark:bg-zinc-900 border-none rounded-lg px-4 py-3 focus:ring-1 focus:ring-primary text-sm"
+							placeholder="Tu email"
+							type="email"
+						/>
+						<button class="bg-deep-blue text-white dark:bg-primary py-3 rounded-lg font-bold text-xs uppercase tracking-widest">
+							Suscribirme
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="border-t border-gray-100 dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+				<p class="text-xs text-gray-400">© 2024 EPP TOTAL S.A. Todos los derechos reservados.</p>
+				<div class="flex space-x-6 text-xs text-gray-400">
+					<a class="hover:text-primary" href="#">Términos</a>
+					<a class="hover:text-primary" href="#">Privacidad</a>
+					<a class="hover:text-primary" href="#">Cookies</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Floating WhatsApp Button -->
+	<a class="fixed bottom-8 right-8 z-50 group" href="#">
+		<div class="flex items-center">
+			<div
+				class="bg-white px-4 py-2 rounded-full shadow-xl mr-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none translate-x-4 group-hover:translate-x-0 transform duration-300"
+			>
+				<span class="text-xs font-bold text-deep-blue">¿Necesitas ayuda técnica?</span>
+			</div>
+			<div
+				class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform active:scale-95"
+			>
+				<svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+					<path
+						d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.464c1.589.943 3.321 1.442 5.088 1.442 5.463 0 9.904-4.44 9.906-9.904.002-2.646-1.03-5.132-2.903-7.005-1.874-1.872-4.359-2.903-7.004-2.903-5.463 0-9.903 4.44-9.905 9.905-.001 1.884.513 3.722 1.486 5.302l-1.01 3.693 3.783-.992zm10.167-7.11c-.244-.122-1.444-.712-1.667-.794-.223-.081-.385-.122-.547.122-.162.244-.629.794-.771.956-.142.162-.284.183-.528.061-.244-.122-1.029-.38-1.96-1.211-.724-.646-1.213-1.444-1.355-1.687-.142-.244-.015-.376.107-.497.11-.109.244-.285.366-.427.122-.142.162-.244.244-.407.081-.162.041-.305-.02-.427-.061-.122-.547-1.32-.75-1.81-.197-.473-.399-.41-.547-.417-.141-.007-.305-.008-.468-.008-.163 0-.427.061-.65.285-.224.224-.854.834-.854 2.035 0 1.201.874 2.359.996 2.522.122.163 1.72 2.626 4.167 3.683.582.251 1.036.401 1.391.513.584.186 1.115.159 1.535.096.468-.07 1.444-.59 1.647-1.159.203-.57.203-1.058.142-1.159-.061-.101-.224-.162-.468-.284z"
+					></path>
+				</svg>
+			</div>
+		</div>
+	</a>
+</Layout>
