@@ -17,6 +17,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.nav-link {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
