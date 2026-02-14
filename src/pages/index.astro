@@ -12,11 +12,11 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 				<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-7 sm:h-9 md:h-10 w-auto" loading="eager" />
 			</div>
 			<div class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest text-white/85">
-				<a class="nav-link hover:text-primary transition-colors" href="#">Inicio</a>
-				<a class="nav-link hover:text-primary transition-colors" href="#">Productos</a>
-				<a class="nav-link hover:text-primary transition-colors" href="#">Servicios</a>
-				<a class="nav-link hover:text-primary transition-colors" href="#">Nosotros</a>
-				<a class="nav-link hover:text-primary transition-colors" href="#">Contacto</a>
+				<a class="nav-link hover:text-primary transition-colors" href="#inicio">Inicio</a>
+				<a class="nav-link hover:text-primary transition-colors" href="#consultoria">Consultoría</a>
+				<a class="nav-link hover:text-primary transition-colors" href="#epp">EPP</a>
+				<a class="nav-link hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
+				<a class="nav-link hover:text-primary transition-colors" href="#contacto">Contacto</a>
 			</div>
 			<div class="flex items-center space-x-3 sm:space-x-6">
 				<button class="bg-primary text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm hover:bg-primary/90 transition-all uppercase tracking-wider">
@@ -36,11 +36,11 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 		</div>
 		<div id="mobile-menu" class="md:hidden hidden border-t border-white/10 bg-deep-blue/40 backdrop-blur-md">
 			<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2 text-sm font-medium uppercase tracking-widest text-white/90">
-				<a class="nav-link py-2" href="#">Inicio</a>
-				<a class="nav-link py-2" href="#">Productos</a>
-				<a class="nav-link py-2" href="#">Servicios</a>
-				<a class="nav-link py-2" href="#">Nosotros</a>
-				<a class="nav-link py-2" href="#">Contacto</a>
+				<a class="nav-link py-2" href="#inicio">Inicio</a>
+				<a class="nav-link py-2" href="#consultoria">Consultoría</a>
+				<a class="nav-link py-2" href="#epp">EPP</a>
+				<a class="nav-link py-2" href="#nosotros">Nosotros</a>
+				<a class="nav-link py-2" href="#contacto">Contacto</a>
 			</div>
 		</div>
 	</nav>
@@ -83,7 +83,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	</script>
 
 	<!-- Hero Section -->
-	<section class="relative h-screen flex items-center overflow-hidden">
+	<section id="inicio" class="relative h-screen flex items-center overflow-hidden">
 		<div class="absolute inset-0 z-0">
 			<div class="absolute inset-0 bg-gradient-to-r from-deep-blue via-deep-blue/60 to-transparent z-10"></div>
 			<img
@@ -143,7 +143,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	</section>
 
 	<!-- Services Section (Consultancy) -->
-	<section class="py-32 px-6">
+	<section id="consultoria" class="py-32 px-6">
 		<div class="max-w-7xl mx-auto">
 			<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
 				<div class="max-w-2xl">
@@ -157,66 +157,71 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 				</div>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-				<!-- Asymmetric Grid -->
 				<div class="md:col-span-7 bg-white dark:bg-zinc-900 p-12 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all">
 					<div class="absolute top-0 right-0 p-8">
-						<span class="material-icons text-7xl text-primary/10">engineering</span>
+						<span class="material-icons text-7xl text-primary/10">fact_check</span>
 					</div>
 					<div class="relative z-10">
 						<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-							<span class="material-icons text-primary">psychology</span>
+							<span class="material-icons text-primary">find_in_page</span>
 						</div>
-						<h4 class="text-2xl font-bold mb-4 dark:text-white">Consultoría Técnica</h4>
+						<h4 class="text-2xl font-bold mb-4 dark:text-white">Auditorías &amp; Diagnóstico</h4>
 						<p class="text-gray-500 mb-8 leading-relaxed max-w-md">
-							Identificación de riesgos específicos por área de trabajo y recomendación de EPP optimizados.
+							Relevamiento, evaluación de riesgos y planes de acción.
 						</p>
 						<a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest hover:translate-x-2 transition-transform" href="#">
 							Saber más <span class="material-icons ml-2 text-sm">arrow_forward</span>
 						</a>
 					</div>
 				</div>
+
 				<div class="md:col-span-5 bg-deep-blue p-12 rounded-3xl relative overflow-hidden group">
+					<div class="absolute top-0 right-0 p-8">
+						<span class="material-icons text-7xl text-primary/10">domain_verification</span>
+					</div>
 					<div class="relative z-10 text-white">
 						<div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6">
-							<span class="material-icons text-primary">verified_user</span>
+							<span class="material-icons text-primary">assignment_turned_in</span>
 						</div>
-						<h4 class="text-2xl font-bold mb-4">Auditorías de Seguridad</h4>
+						<h4 class="text-2xl font-bold mb-4">Programas SyH</h4>
 						<p class="text-white/60 mb-8 leading-relaxed">
-							Revisiones exhaustivas de cumplimiento normativo y estado de equipos de protección.
+							Diseño e implementación de programas de Higiene y Seguridad.
 						</p>
 						<a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest" href="#">
 							Agendar <span class="material-icons ml-2 text-sm">calendar_today</span>
 						</a>
 					</div>
 				</div>
+
 				<div class="md:col-span-4 bg-primary/10 p-10 rounded-3xl border border-primary/20">
 					<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
 						<span class="material-icons text-white">school</span>
 					</div>
-					<h4 class="text-xl font-bold mb-3 dark:text-white">Capacitación de Uso</h4>
-					<p class="text-gray-500 text-sm">
-						Entrenamos a su personal en el uso correcto y mantenimiento preventivo de cada EPP.
-					</p>
+					<h4 class="text-xl font-bold mb-3 dark:text-white">Capacitación</h4>
+					<p class="text-gray-500 text-sm">Formación práctica para mandos y operarios.</p>
 				</div>
-				<div class="md:col-span-8 glass p-10 rounded-3xl flex items-center">
-					<div class="flex-1">
-						<h4 class="text-xl font-bold mb-3 dark:text-white">Gestión de Inventario Personalizada</h4>
-						<p class="text-gray-500 text-sm max-w-md">
-							Sistemas de reposición automática para que su planta nunca se quede sin protección esencial.
-						</p>
+
+				<div class="md:col-span-4 glass p-10 rounded-3xl">
+					<div class="w-12 h-12 bg-white/60 dark:bg-white/10 rounded-lg flex items-center justify-center mb-6">
+						<span class="material-icons text-primary">campaign</span>
 					</div>
-					<div class="hidden sm:block">
-						<div class="w-24 h-24 rounded-full border-4 border-primary/30 flex items-center justify-center">
-							<span class="material-icons text-primary text-4xl">inventory_2</span>
-						</div>
+					<h4 class="text-xl font-bold mb-3 dark:text-white">Planes de Emergencia</h4>
+					<p class="text-gray-500 text-sm">Evacuación, simulacros y respuesta ante incidentes.</p>
+				</div>
+
+				<div class="md:col-span-4 bg-white dark:bg-zinc-900 p-10 rounded-3xl border border-gray-100 dark:border-zinc-800">
+					<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+						<span class="material-icons text-primary">support_agent</span>
 					</div>
+					<h4 class="text-xl font-bold mb-3 dark:text-white">Asesoramiento Técnico</h4>
+					<p class="text-gray-500 text-sm">Acompañamiento permanente y cumplimiento normativo.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Categories Carousel Section -->
-	<section class="py-24 bg-deep-blue overflow-hidden">
+	<section id="epp" class="py-24 bg-deep-blue overflow-hidden">
 		<div class="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-center">
 			<h2 class="text-4xl text-white font-serif">Categorías <span class="text-primary italic">Destacadas</span></h2>
 			<div class="flex space-x-4">
@@ -287,7 +292,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	</section>
 
 	<!-- Partners / Trust -->
-	<section class="py-20 bg-background-light dark:bg-zinc-950">
+	<section id="nosotros" class="py-20 bg-background-light dark:bg-zinc-950">
 		<div class="max-w-7xl mx-auto px-6">
 			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
 			<div class="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
@@ -301,7 +306,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	</section>
 
 	<!-- Footer -->
-	<footer class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
+	<footer id="contacto" class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
 		<div class="max-w-7xl mx-auto">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
 				<div class="col-span-1 md:col-span-1">
