@@ -33,14 +33,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 				<a class="nav-link hover:text-primary transition-colors" href="#contacto">Contacto</a>
 			</div>
 			<div class="flex items-center space-x-3 sm:space-x-6">
-				<a
-					class="bg-primary text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm hover:bg-primary/90 transition-all uppercase tracking-wider"
-					href={waLink('Hola, necesitaria una cotización')}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Cotizar
-				</a>
+				
 				<button
 					id="nav-toggle"
 					type="button"
@@ -104,45 +97,123 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 	<!-- Hero Section -->
 	<section id="inicio" class="relative h-screen flex items-center overflow-hidden">
 		<div class="absolute inset-0 z-0">
-			<div class="absolute inset-0 bg-gradient-to-r from-deep-blue via-deep-blue/60 to-transparent z-10"></div>
-			<img
-				class="w-full h-full object-cover"
-				data-alt="Modern industrial worker wearing high-tech safety gear"
-				src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBFXHPVG4SculurCDrtmYcsUmcaAEOBcXEn9uY9Anipi0xDqDhz1RZta2TvLXii_LlkRe_kf9Zr2grfLG4ZoFFYSr_EU7nAO_ZpzjXI-zMixTPtFZ8R-VAgDR5HI978TI4mzd8O7x6VKamPCkt3Wftg-MLL2ZLuGbBWujdmTcPdFqdwpPDpBLCmIp8D1cVWLVA0mfOFnnYtIMsKGXpCrxWWz9f_oU0tWNLmI5NOopBnku6Y7KH3vrFO8be3v8WjH7T3zhMgq5mcU"
-			/>
-		</div>
-		<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
-			<div class="max-w-2xl">
-				<span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Seguridad</span>
-				<h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
-					Seguridad <span class="italic font-normal">Industrial</span> de <span class="font-display font-bold text-primary">Vanguardia</span>
-				</h1>
-				<p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
-					Protegiendo el futuro de tu industria con tecnología de última generación y asesoría técnica especializada.
-				</p>
-				<div class="flex flex-col sm:flex-row gap-4">
-					<a
-						class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20"
-						href={waLink('Hola, quisiera consultar sobre asesoría técnica')}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Asesoría Técnica
-					</a>
-					<button class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
-						Explorar Catálogo
-					</button>
-				</div>
-			</div>
-		</div>
+  <div class="absolute inset-0 bg-gradient-to-r from-deep-blue via-deep-blue/60 to-transparent z-20"></div>
+
+  <div id="hero-slider" class="absolute inset-0">
+    <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-1000"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBFXHPVG4SculurCDrtmYcsUmcaAEOBcXEn9uY9Anipi0xDqDhz1RZta2TvLXii_LlkRe_kf9Zr2grfLG4ZoFFYSr_EU7nAO_ZpzjXI-zMixTPtFZ8R-VAgDR5HI978TI4mzd8O7x6VKamPCkt3Wftg-MLL2ZLuGbBWujdmTcPdFqdwpPDpBLCmIp8D1cVWLVA0mfOFnnYtIMsKGXpCrxWWz9f_oU0tWNLmI5NOopBnku6Y7KH3vrFO8be3v8WjH7T3zhMgq5mcU"
+      alt="Slide 1" />
+
+    <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
+      src="https://www.ul.com/sites/default/files/styles/hero_boxed_width/public/2022-04/G165829163-Safety-Apparel-ULcom-HEADER-2400x1600.jpg?itok=7YASYAsV"
+      alt="Slide 2" />
+
+    <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
+      src="https://cdn.shopify.com/s/files/1/0330/7847/6939/files/Builders_check_list.png?v=1646123801"
+      alt="Slide 3" />
+  </div>
+</div>
+
+	<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
+  
+  <div id="hero-content" class="max-w-2xl relative min-h-[500px] flex items-center">
+
+
+    <!-- Slide Text 1 -->
+    <div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute inset-0">
+      <h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
+        Seguridad <span class="italic font-normal">Industrial</span> de <span class="font-display font-bold text-primary">Vanguardia</span>
+      </h1>
+      <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
+        Protegiendo el futuro de tu industria con tecnología de última generación y asesoría técnica especializada.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20"
+          href={waLink('Hola, quisiera consultar sobre asesoría técnica')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Asesoría Técnica
+        </a>
+        <a 
+  href="/catalogo"
+  class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center"
+>
+  Explorar Catálogo
+</a>
+
+      </div>
+    </div>
+
+    <!-- Slide Text 2 -->
+    <div class="hero-content-slide opacity-0 transition-opacity duration-1000 absolute inset-0">
+      <h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
+        <span class="font-display font-bold text-primary">EPP</span> <span class="italic font-normal">Certificados</span> y Homologados
+      </h1>
+      <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
+        Equipos aprobados bajo normativas vigentes que garantizan protección real y cumplimiento legal en cada entorno laboral.
+      </p>
+    </div>
+
+    <!-- Slide Text 3 -->
+    <div class="hero-content-slide opacity-0 transition-opacity duration-1000 absolute inset-0">
+      <h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
+        Soluciones <span class="italic font-normal">Integrales</span> en <span class="font-display font-bold text-primary">Seguridad</span>
+      </h1>
+      <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
+        Diagnóstico de riesgos, planes de emergencia y capacitaciones adaptadas a cada rubro.
+      </p>
+    </div>
+
+  </div>
+</div>
+
 		<div class="absolute bottom-10 right-10 z-20 hidden lg:block">
-			<div class="flex flex-col space-y-4">
-				<div class="h-1 w-20 bg-primary"></div>
-				<div class="h-1 w-12 bg-white/20"></div>
-				<div class="h-1 w-12 bg-white/20"></div>
-			</div>
-		</div>
+  <div id="hero-indicators" class="flex flex-col space-y-4">
+    <div class="indicator h-1 w-20 bg-primary transition-all duration-500"></div>
+    <div class="indicator h-1 w-12 bg-white/20 transition-all duration-500"></div>
+    <div class="indicator h-1 w-12 bg-white/20 transition-all duration-500"></div>
+  </div>
+</div>
+
 	</section>
+<script>
+  (() => {
+    const slides = document.querySelectorAll('.hero-slide');
+    const textSlides = document.querySelectorAll('.hero-content-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let current = 0;
+
+    const updateIndicators = () => {
+      indicators.forEach((indicator, index) => {
+        if (index === current) {
+          indicator.classList.remove('bg-white/20', 'w-12');
+          indicator.classList.add('bg-primary', 'w-20');
+        } else {
+          indicator.classList.remove('bg-primary', 'w-20');
+          indicator.classList.add('bg-white/20', 'w-12');
+        }
+      });
+    };
+
+    setInterval(() => {
+      slides[current].classList.replace('opacity-100', 'opacity-0');
+      textSlides[current].classList.replace('opacity-100', 'opacity-0');
+
+      current = (current + 1) % slides.length;
+
+      slides[current].classList.replace('opacity-0', 'opacity-100');
+      textSlides[current].classList.replace('opacity-0', 'opacity-100');
+
+      updateIndicators();
+    }, 7000);
+
+    updateIndicators();
+  })();
+</script>
+
+
 
 	<!-- Stats Bar -->
 	<section class="relative z-30 -mt-16 max-w-5xl mx-auto px-6">
