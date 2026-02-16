@@ -94,7 +94,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 		</div>
 		<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
 			<div class="max-w-2xl">
-				<span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Seguridad 4.0</span>
+				<span class="text-primary font-bold tracking-[0.3em] uppercase mb-4 block">Seguridad</span>
 				<h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
 					Seguridad <span class="italic font-normal">Industrial</span> de <span class="font-display font-bold text-primary">Vanguardia</span>
 				</h1>
@@ -224,7 +224,14 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	<section id="epp" class="py-24 bg-deep-blue overflow-hidden">
 		<div class="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-center">
 			<h2 class="text-4xl text-white font-serif">Categorías <span class="text-primary italic">Destacadas</span></h2>
-			<div class="flex space-x-4">
+			<div class="flex items-center space-x-4">
+				<a
+					class="hidden sm:inline-flex items-center bg-primary text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-all"
+					href="/catalogo"
+				>
+					Ver catálogo
+					<span class="material-icons ml-2 text-sm">arrow_forward</span>
+				</a>
 				<button class="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-deep-blue transition-all">
 					<span class="material-icons">west</span>
 				</button>
@@ -291,11 +298,97 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 		</div>
 	</section>
 
-	<!-- Partners / Trust -->
-	<section id="nosotros" class="py-20 bg-background-light dark:bg-zinc-950">
+	<!-- About / Nosotros Section -->
+	<section id="nosotros" class="py-24 bg-background-light dark:bg-zinc-950">
 		<div class="max-w-7xl mx-auto px-6">
-			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
-			<div class="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+			<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+				<div class="max-w-2xl">
+					<h2 class="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-4">Sobre Nosotros</h2>
+					<h3 class="text-5xl font-serif text-deep-blue dark:text-white">
+						Compromiso con la <span class="italic">prevención</span> y la excelencia <span class="font-display font-bold text-primary">técnica</span>.
+					</h3>
+				</div>
+				<div class="text-right">
+					<p class="text-gray-500 max-w-xs mb-4">Acompañamos a las organizaciones con consultoría y provisión de EPP certificado.</p>
+				</div>
+			</div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+				<div class="lg:col-span-7 space-y-10">
+					<div class="relative pl-8">
+						<div class="absolute left-0 top-0 bottom-0 w-px bg-primary/25"></div>
+						<div class="absolute left-[-6px] top-1 w-3 h-3 rounded-full bg-primary"></div>
+						<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-3">Misión</h4>
+						<p class="text-gray-600 dark:text-white/70 leading-relaxed">
+							Prestar servicios de consultoría especializada en materia de Higiene y Seguridad laboral, orientados a la prevención
+							de riesgos y la mejora continua de las condiciones de trabajo. Asimismo, proveer EPP certificados y homologados que
+							cumplan con los más altos estándares y normativas vigentes.
+						</p>
+					</div>
+
+					<div class="relative pl-8">
+						<div class="absolute left-0 top-0 bottom-0 w-px bg-primary/25"></div>
+						<div class="absolute left-[-6px] top-1 w-3 h-3 rounded-full bg-primary"></div>
+						<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-3">Visión</h4>
+						<p class="text-gray-600 dark:text-white/70 leading-relaxed">
+							Constituirnos como una empresa de referencia a nivel regional y nacional en higiene y seguridad en el trabajo,
+							destacándonos por la excelencia técnica, la confiabilidad de nuestros productos y servicios, y el compromiso con
+							entornos laborales seguros, saludables y sostenibles.
+						</p>
+					</div>
+
+					<div class="relative pl-8">
+						<div class="absolute left-0 top-0 bottom-0 w-px bg-primary/25"></div>
+						<div class="absolute left-[-6px] top-1 w-3 h-3 rounded-full bg-primary"></div>
+						<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-3">Propósito</h4>
+						<p class="text-gray-600 dark:text-white/70 leading-relaxed">
+							Contribuir activamente a la protección de los trabajadores mediante estrategias integrales de prevención de riesgos
+							laborales, complementadas con la provisión de EPP certificados; reducir la exposición a peligros, fomentar una cultura
+							preventiva y acompañar a las organizaciones en el cumplimiento de sus obligaciones legales.
+						</p>
+					</div>
+				</div>
+
+				<div class="lg:col-span-5">
+					<div class="bg-white dark:bg-zinc-900 rounded-3xl border border-gray-100 dark:border-zinc-800 p-10 relative overflow-hidden">
+						<div class="absolute top-0 right-0 p-8">
+							<span class="material-icons text-7xl text-primary/10">verified</span>
+						</div>
+						<div class="relative z-10">
+							<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+								<span class="material-icons text-primary">bolt</span>
+							</div>
+							<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-4">¿Por qué elegirnos?</h4>
+							<ul class="space-y-4 text-sm text-gray-600 dark:text-white/70">
+								<li class="flex gap-3">
+									<span class="material-icons text-primary text-base leading-5">check_circle</span>
+									<span>Soluciones integrales: consultoría + EPP</span>
+								</li>
+								<li class="flex gap-3">
+									<span class="material-icons text-primary text-base leading-5">check_circle</span>
+									<span>Asesoramiento personalizado por rubro</span>
+								</li>
+								<li class="flex gap-3">
+									<span class="material-icons text-primary text-base leading-5">check_circle</span>
+									<span>Calidad certificada</span>
+								</li>
+								<li class="flex gap-3">
+									<span class="material-icons text-primary text-base leading-5">check_circle</span>
+									<span>Respuesta ágil y cercana</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Partners / Trust -->
+	<section id="marcas" class="py-20 bg-deep-blue">
+		<div class="max-w-7xl mx-auto px-6">
+			<p class="text-center text-white/50 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
+			<div class="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700 text-white">
 				<span class="text-2xl font-black">INDUSTRIAS-X</span>
 				<span class="text-2xl font-black italic">GLOBAL_CORP</span>
 				<span class="text-2xl font-black">STARK_IND</span>
@@ -308,7 +401,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	<!-- Footer -->
 	<footer id="contacto" class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
 		<div class="max-w-7xl mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16">
 				<div class="col-span-1 md:col-span-1">
 					<div class="flex items-center space-x-2 mb-8">
 						<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-9 w-auto" loading="lazy" />
@@ -340,21 +433,12 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 					</div>
 				</div>
 				<div>
-					<h6 class="font-bold text-deep-blue dark:text-white mb-6 uppercase text-xs tracking-widest">Productos</h6>
-					<ul class="space-y-4 text-sm text-gray-500">
+					<h6 class="font-bold text-deep-blue dark:text-white mb-8 uppercase text-xs tracking-widest">Productos</h6>
+					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 text-sm text-gray-500">
 						<li><a class="hover:text-primary transition-colors" href="#">Protección Facial</a></li>
 						<li><a class="hover:text-primary transition-colors" href="#">Equipos de Altura</a></li>
 						<li><a class="hover:text-primary transition-colors" href="#">Calzado Industrial</a></li>
 						<li><a class="hover:text-primary transition-colors" href="#">Ropa de Trabajo</a></li>
-					</ul>
-				</div>
-				<div>
-					<h6 class="font-bold text-deep-blue dark:text-white mb-6 uppercase text-xs tracking-widest">Compañía</h6>
-					<ul class="space-y-4 text-sm text-gray-500">
-						<li><a class="hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Blog de Seguridad</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Certificaciones</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Casos de Éxito</a></li>
 					</ul>
 				</div>
 			</div>

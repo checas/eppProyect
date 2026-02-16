@@ -1,0 +1,401 @@
+---
+import Layout from '../layouts/Layout.astro';
+import logoHorizontal from '../assets/logo-horizontal.png';
+import whatsappLogo from '../assets/whatsapp_logo.svg';
+
+const products = [
+	{
+		brand: 'MSA Safety',
+		name: 'Casco V-Gard H1 Trivent Ventilación',
+		category: 'Protección Craneana',
+		description:
+			'Casco de seguridad industrial con diseño ergonómico y ventilación, ideal para jornadas extensas. Compatible con accesorios y configuraciones de ajuste por matraca.',
+		image:
+			'https://lh3.googleusercontent.com/aida-public/AB6AXuDlXmoNLgkgqMx8js_u5Ui12DqyHfH-V9_1aQVzVyaFn-Ts4n54l6s5AvaLgtYKXH426In_AzQ-VFyY6X2CZNS1FaATCYTLc3CPze0MLwVSohlR_LH0GT08mNLvV41uI9Tdz2Fs1xhtvyXF50Bj4_vk4zp95qD3E6racCLYI6MdT_4g3bYutTksiBzwwtjryl2eggWD0yorrBvZ1xyfSjVyewqRE0lKk0paZm4g9mi_dR8OF-UpE0_ZhE18c64IVyhWavkDfsjvzIs',
+		specs: [
+			{ label: 'Material', value: 'Polietileno' },
+			{ label: 'Ajuste', value: 'Matraca' },
+			{ label: 'Norma', value: 'ANSI Z89.1' },
+		],
+	},
+	{
+		brand: 'Libus',
+		name: 'Casco Milenium Full Brim Amarillo',
+		category: 'Protección Craneana',
+		description:
+			'Casco con ala completa (full brim) para mayor cobertura. Recomendado para uso general en planta y obra, con opciones dieléctricas según modelo.',
+		image:
+			'https://lh3.googleusercontent.com/aida-public/AB6AXuACDY7uJwfSIwIC4dHRp-0VzcBbcDH7i_LbUNODMCMI8YK6eCjq04CxJI4Nj4XNFQeLyglnPWCNor_nQRAFHJMgy4QhVb5b9GaGtDfa4HGXkInWp5jKC6STtE_JMrWIqkBdj6SjXJOFsX62_MSmjavFdPslut21S6c3hG6f_P8Ck-x9kn30RF6Nau5XSQebwGfS9cenR49B8Fx7FSZKLRRXqAAPyb0z6IVemxc_NnUZyf4pGez4Y6UPgQ7dgszjlwPMrEyNdySQS8Y',
+		specs: [
+			{ label: 'Aislación', value: 'Dieléctrico' },
+			{ label: 'Peso', value: '420g' },
+			{ label: 'Soporte', value: '6 Puntos' },
+		],
+	},
+	{
+		brand: '3M Industrial',
+		name: 'Casco de Seguridad H-700 Naranja',
+		category: 'Protección Craneana',
+		description:
+			'Casco clásico de alta visibilidad para entornos industriales. Apto para combinar con protectores faciales y accesorios según necesidad operativa.',
+		image:
+			'https://lh3.googleusercontent.com/aida-public/AB6AXuDi9KnxrfWNyviW_bzGeYfgRnRSiSTwyHPH6jrCJ57x8DyjubTv4G--7lewrZ3RLoZKjAtSXfQW3S4ttj7UZ-_SWhECltelgsGVguEh8yc-v3BMwr90LqVNoUakVBxseczrYRdy0Rb7yYOxql1c0maxt7iBy0midtD9RQ_WOwYxi62KeXXhGvknKcfz4PcABfLfnOM12IXpapnt9jmP2x7uoB5Kke1sjbFmFPsVdWsPf2Wwz3aAug-iozF7bqdRxgGVSooz8zbFfrU',
+		specs: [
+			{ label: 'Serie', value: 'H-700' },
+			{ label: 'Ventilación', value: 'Sí' },
+			{ label: 'Categoría', value: 'Tipo I' },
+		],
+	},
+	{
+		brand: 'MSA Safety',
+		name: 'Casco V-Gard Clásico Azul Real',
+		category: 'Protección Craneana',
+		description:
+			'Casco robusto para tareas generales con enfoque en confort y ajuste. Ideal para equipamiento corporativo por su durabilidad y disponibilidad de repuestos.',
+		image:
+			'https://lh3.googleusercontent.com/aida-public/AB6AXuCYarCGRAviht1OHokK_z6DafS_v9WGNKMdBMl_pBVbx7zsQabt2TaAVQ_E5uM4ix_i7dFmdXYpckf0Y6qpJgZsKKL9mTbsPO1rT73RqjvuFnNhZZvGd81H6QN5_IkY3Ves859kmiF-ykMWyZ0K1r8hQImYoZoY2jSujiYTpa_hILKy-k6-TNmyaMVv6rMpgf36jaqhQ30Vu0ONRYB7HchM7cFgHRyK6kzfC2I9NrYoUaEJoSnB-JPiibrUPRTJlMUXWPRXlgU7Emo',
+		specs: [
+			{ label: 'Ajuste', value: 'Cremallera' },
+			{ label: 'Slot Accesorios', value: 'Universal' },
+			{ label: 'Visera', value: 'Reducida' },
+		],
+	},
+];
+---
+
+<Layout title="Catálogo | EPP TOTAL">
+	<header class="sticky top-0 z-50 bg-white dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/20 shadow-sm">
+		<div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+			<div class="flex items-center gap-8">
+				<a class="flex items-center gap-3" href="/">
+					<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-8 w-auto" loading="eager" />
+				</a>
+				<nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+					<a class="hover:text-primary transition-colors border-b-2 border-primary pb-1" href="/catalogo">Catálogo</a>
+					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="#">Certificaciones</a>
+					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="#">Empresas</a>
+					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="/#contacto">Contacto</a>
+				</nav>
+			</div>
+			<div class="hidden md:flex items-center gap-4 flex-1 max-w-md ml-8">
+				<div class="relative w-full">
+					<input
+						class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-2.5 pl-4 pr-10 text-sm focus:ring-2 focus:ring-primary/50"
+						placeholder="Buscar protección, calzado o marca..."
+						type="text"
+					/>
+					<span class="material-icons absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-base">search</span>
+				</div>
+			</div>
+			<div class="flex items-center gap-4 ml-6">
+				<button class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all">
+					<span class="material-icons text-sm">download</span>
+					<span class="text-sm">Catálogo PDF</span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="max-w-7xl mx-auto px-4 py-8 bg-background-light dark:bg-background-dark min-h-[calc(100vh-5rem)]">
+		<div class="flex gap-8">
+			<aside class="w-64 flex-shrink-0 hidden lg:block">
+				<div class="sticky top-28 space-y-8">
+					<div>
+						<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Categoría</h3>
+						<div class="space-y-2">
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input checked type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm font-medium group-hover:text-primary transition-colors">Protección Craneana</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Protección Visual</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Calzado de Seguridad</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Protección Manual</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Trabajo en Altura</span>
+							</label>
+						</div>
+					</div>
+					<div class="pt-6 border-t border-slate-200 dark:border-slate-800">
+						<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Marca</h3>
+						<div class="space-y-2">
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">3M</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">MSA</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Libus</span>
+							</label>
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
+								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Ombú</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</aside>
+
+			<div class="flex-1">
+				<div class="mb-8 rounded-2xl overflow-hidden bg-slate-900 relative">
+					<img
+						class="w-full h-48 object-cover opacity-50"
+						alt="Fondo de catálogo"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRDJEhl2r3GygbOUPDFUMWC-4NeBdChc9mpdWNn7Ic7A9v6nZTviCOIlSC-SduoVeYSsgx2HwTdCWvjwuWLRGzPf1iD3whx42a6ELVg_DHvvp1krANRaid9gnvObY-JLggWy0TREwxc0AV89A2zHZ8CUI_CrWE7z171Jjv2TQK6vmqUvDLe-nzC0-t9U-nZImNLrD--Spa38sADgZTuq_1SD5g0_PI5IQ-Mw5Ml7YIeWNdwxFY3tHD50IqH1yMX2lQ4_elTDqdWzI"
+					/>
+					<div class="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-r from-slate-900 to-transparent">
+						<nav class="flex text-xs text-primary/80 gap-2 mb-2">
+							<span>Catálogo</span>
+							<span>/</span>
+							<span>Protección Industrial</span>
+						</nav>
+						<h1 class="text-3xl font-bold text-white mb-2">Protección Craneana</h1>
+						<p class="max-w-md text-slate-300 text-sm leading-relaxed">
+							Equipamiento de alta resistencia diseñado para mitigar impactos y garantizar la seguridad del personal en entornos de alto riesgo.
+							Certificaciones ANSI e IRAM vigentes.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-between mb-6">
+					<p class="text-sm text-slate-500 dark:text-slate-400">
+						Mostrando <span class="font-bold text-slate-800 dark:text-white">{products.length}</span> productos
+					</p>
+					<div class="flex items-center gap-4">
+						<select class="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-primary py-1.5">
+							<option>Ordenar por: Relevancia</option>
+							<option>Más recientes</option>
+							<option>Marca A-Z</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+					{products.map((p) => (
+						<button
+							type="button"
+							class="text-left group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary transition-all duration-300"
+							data-product
+							data-brand={p.brand}
+							data-name={p.name}
+							data-description={p.description}
+							data-image={p.image}
+						>
+							<div class="relative bg-slate-50 dark:bg-slate-800 aspect-square overflow-hidden">
+								<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500" alt={p.name} src={p.image} />
+								<div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+									<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+										<p class="text-xs font-bold text-primary uppercase mb-2">Especificaciones</p>
+										<ul class="text-[11px] space-y-1 text-slate-600 dark:text-slate-400">
+											{p.specs.map((s, idx) => (
+												<li class={`flex justify-between ${idx !== p.specs.length - 1 ? 'border-b border-slate-100 dark:border-slate-700 pb-1' : ''}`}>
+													<span>{s.label}:</span>
+													<span class="font-medium">{s.value}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="p-5">
+								<span class="text-[10px] font-bold text-primary tracking-widest uppercase mb-1 block">{p.brand}</span>
+								<h3 class="font-bold text-lg mb-4 leading-tight text-deep-blue dark:text-white">{p.name}</h3>
+								<div class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors">
+									<img src={whatsappLogo.src} alt="WhatsApp" class="w-5 h-5" loading="lazy" />
+									Consultar ahora
+								</div>
+							</div>
+						</button>
+					))}
+				</div>
+
+				<div class="mt-12 flex items-center justify-center gap-2">
+					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-primary transition-colors">
+						<span class="material-icons">chevron_left</span>
+					</button>
+					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-white font-bold">1</button>
+					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold hover:border-primary transition-colors">
+						2
+					</button>
+					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold hover:border-primary transition-colors">
+						3
+					</button>
+					<span class="mx-2 text-slate-400">...</span>
+					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold hover:border-primary transition-colors">
+						12
+					</button>
+					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-primary transition-colors">
+						<span class="material-icons">chevron_right</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<dialog
+		id="product-modal"
+		class="backdrop:bg-black/50 backdrop:backdrop-blur-sm fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(42rem,calc(100vw-2rem))] max-h-[calc(100vh-2rem)] overflow-auto rounded-3xl p-0 border border-gray-100 dark:border-zinc-800 bg-white dark:bg-zinc-900"
+	>
+		<div class="p-6 sm:p-8">
+			<div class="flex items-start justify-between gap-6 mb-6">
+				<div>
+					<p id="product-modal-brand" class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2"></p>
+					<h2 id="product-modal-name" class="text-2xl sm:text-3xl font-bold text-deep-blue dark:text-white leading-snug"></h2>
+				</div>
+				<button
+					type="button"
+					data-close-modal
+					class="w-11 h-11 rounded-full border border-gray-200 dark:border-zinc-800 text-gray-500 dark:text-white/70 hover:border-primary/50 hover:text-primary transition-colors inline-flex items-center justify-center"
+					aria-label="Cerrar"
+				>
+					<span class="material-icons">close</span>
+				</button>
+			</div>
+
+			<div class="rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-6">
+				<img id="product-modal-image" alt="" class="w-full h-72 object-contain p-8" />
+			</div>
+			<p id="product-modal-description" class="text-sm text-gray-600 dark:text-white/70 leading-relaxed"></p>
+			<div class="mt-8 flex flex-col sm:flex-row gap-3">
+				<a
+					id="product-modal-whatsapp"
+					href="https://wa.me/yournumber"
+					class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors"
+				>
+					<img src={whatsappLogo.src} alt="WhatsApp" class="w-5 h-5" loading="lazy" />
+					Consultar ahora
+				</a>
+				<button
+					type="button"
+					data-close-modal
+					class="flex-1 bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold py-3 rounded-xl transition-colors"
+				>
+					Cerrar
+				</button>
+			</div>
+		</div>
+	</dialog>
+
+	<script>
+		// @ts-check
+		(() => {
+			const modal = document.getElementById('product-modal');
+			if (!(modal instanceof HTMLDialogElement)) return;
+
+			const brandEl = document.getElementById('product-modal-brand');
+			const nameEl = document.getElementById('product-modal-name');
+			const descEl = document.getElementById('product-modal-description');
+			const imgEl = document.getElementById('product-modal-image');
+
+			if (!(brandEl instanceof HTMLElement)) return;
+			if (!(nameEl instanceof HTMLElement)) return;
+			if (!(descEl instanceof HTMLElement)) return;
+			if (!(imgEl instanceof HTMLImageElement)) return;
+
+			const closeButtons = modal.querySelectorAll('[data-close-modal]');
+			closeButtons.forEach((btn) => {
+				btn.addEventListener('click', () => modal.close());
+			});
+
+			modal.addEventListener('click', (e) => {
+				const target = e.target;
+				if (target === modal) modal.close();
+			});
+
+			const cards = document.querySelectorAll('[data-product]');
+			cards.forEach((card) => {
+				card.addEventListener('click', () => {
+					if (!(card instanceof HTMLElement)) return;
+					const brand = card.getAttribute('data-brand') ?? '';
+					const name = card.getAttribute('data-name') ?? '';
+					const description = card.getAttribute('data-description') ?? '';
+					const image = card.getAttribute('data-image') ?? '';
+
+					brandEl.textContent = brand;
+					nameEl.textContent = name;
+					descEl.textContent = description;
+					imgEl.src = image;
+					imgEl.alt = name;
+
+					modal.showModal();
+				});
+			});
+		})();
+	</script>
+
+	<footer id="contacto" class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
+		<div class="max-w-7xl mx-auto">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16">
+				<div class="col-span-1 md:col-span-1">
+					<div class="flex items-center space-x-2 mb-8">
+						<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-9 w-auto" loading="lazy" />
+					</div>
+					<p class="text-gray-500 text-sm leading-relaxed mb-8">
+						Líderes en suministro y consultoría de seguridad industrial para empresas de alto rendimiento en toda la región.
+					</p>
+					<div class="flex space-x-4">
+						<a
+							class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-all"
+							href="#"
+						>
+							<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+								<path
+									d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+								></path>
+							</svg>
+						</a>
+						<a
+							class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-all"
+							href="#"
+						>
+							<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+								<path
+									d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+								></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div>
+					<h6 class="font-bold text-deep-blue dark:text-white mb-8 uppercase text-xs tracking-widest">Productos</h6>
+					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 text-sm text-gray-500">
+						<li><a class="hover:text-primary transition-colors" href="#">Protección Facial</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Equipos de Altura</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Calzado Industrial</a></li>
+						<li><a class="hover:text-primary transition-colors" href="#">Ropa de Trabajo</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="border-t border-gray-100 dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+				<p class="text-xs text-gray-400">© 2026 EPP TOTAL S.A. Todos los derechos reservados.</p>
+				<div class="flex space-x-6 text-xs text-gray-400">
+					<a class="hover:text-primary" href="#">Términos</a>
+					<a class="hover:text-primary" href="#">Privacidad</a>
+					<a class="hover:text-primary" href="#">Cookies</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<a class="fixed bottom-8 right-8 z-[100] group" href="https://wa.me/yournumber">
+		<div class="absolute -top-12 right-0 bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-4 py-1.5 rounded-xl shadow-xl text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-primary/20 pointer-events-none">
+			¿Necesitas asesoramiento técnico?
+		</div>
+		<div class="bg-emerald-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95">
+			<img src={whatsappLogo.src} alt="WhatsApp" class="w-8 h-8" loading="lazy" />
+		</div>
+	</a>
+</Layout>
