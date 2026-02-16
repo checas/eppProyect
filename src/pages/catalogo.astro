@@ -3,8 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import logoHorizontal from '../assets/logo-horizontal.png';
 import whatsappLogo from '../assets/whatsapp_logo.svg';
 
+const waNumber = '5492644399189';
+const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+
 const products = [
 	{
+		id: 'p1',
 		brand: 'MSA Safety',
 		name: 'Casco V-Gard H1 Trivent Ventilación',
 		category: 'Protección Craneana',
@@ -272,7 +276,7 @@ const products = [
 			<div class="mt-8 flex flex-col sm:flex-row gap-3">
 				<a
 					id="product-modal-whatsapp"
-					href="https://wa.me/yournumber"
+					href={waLink('Hola, quisiera consultar por este producto')}
 					class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors"
 				>
 					<img src={whatsappLogo.src} alt="WhatsApp" class="w-5 h-5" loading="lazy" />
@@ -299,11 +303,13 @@ const products = [
 			const nameEl = document.getElementById('product-modal-name');
 			const descEl = document.getElementById('product-modal-description');
 			const imgEl = document.getElementById('product-modal-image');
+			const waEl = document.getElementById('product-modal-whatsapp');
 
 			if (!(brandEl instanceof HTMLElement)) return;
 			if (!(nameEl instanceof HTMLElement)) return;
 			if (!(descEl instanceof HTMLElement)) return;
 			if (!(imgEl instanceof HTMLImageElement)) return;
+			if (!(waEl instanceof HTMLAnchorElement)) return;
 
 			const closeButtons = modal.querySelectorAll('[data-close-modal]');
 			closeButtons.forEach((btn) => {
@@ -330,6 +336,8 @@ const products = [
 					imgEl.src = image;
 					imgEl.alt = name;
 
+					waEl.href = `https://wa.me/5492644399189?text=${encodeURIComponent(`Hola, quisiera consultar por el producto: ${name}`)}`;
+
 					modal.showModal();
 				});
 			});
@@ -338,7 +346,7 @@ const products = [
 
 	<footer id="contacto" class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
 		<div class="max-w-7xl mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16">
+			<div class="grid grid-cols-1 md:grid-cols-1 gap-16 md:gap-24 mb-16">
 				<div class="col-span-1 md:col-span-1">
 					<div class="flex items-center space-x-2 mb-8">
 						<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-9 w-auto" loading="lazy" />
@@ -346,6 +354,9 @@ const products = [
 					<p class="text-gray-500 text-sm leading-relaxed mb-8">
 						Líderes en suministro y consultoría de seguridad industrial para empresas de alto rendimiento en toda la región.
 					</p>
+					<a class="inline-flex items-center text-sm text-gray-500 hover:text-primary transition-colors mb-8" href="mailto:contacto@epptotal.com.ar">
+						contacto@epptotal.com.ar
+					</a>
 					<div class="flex space-x-4">
 						<a
 							class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-all"
@@ -369,28 +380,19 @@ const products = [
 						</a>
 					</div>
 				</div>
-				<div>
-					<h6 class="font-bold text-deep-blue dark:text-white mb-8 uppercase text-xs tracking-widest">Productos</h6>
-					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 text-sm text-gray-500">
-						<li><a class="hover:text-primary transition-colors" href="#">Protección Facial</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Equipos de Altura</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Calzado Industrial</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Ropa de Trabajo</a></li>
-					</ul>
-				</div>
 			</div>
 			<div class="border-t border-gray-100 dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 				<p class="text-xs text-gray-400">© 2026 EPP TOTAL S.A. Todos los derechos reservados.</p>
 				<div class="flex space-x-6 text-xs text-gray-400">
-					<a class="hover:text-primary" href="#">Términos</a>
-					<a class="hover:text-primary" href="#">Privacidad</a>
-					<a class="hover:text-primary" href="#">Cookies</a>
+					<a class="hover:text-primary" href="/terminos">Términos</a>
+					<a class="hover:text-primary" href="/privacidad">Privacidad</a>
+					<a class="hover:text-primary" href="/cookies">Cookies</a>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<a class="fixed bottom-8 right-8 z-[100] group" href="https://wa.me/yournumber">
+	<a class="fixed bottom-8 right-8 z-[100] group" href={waLink('Hola, quisiera consultar sobre asesoría técnica')} target="_blank" rel="noopener noreferrer">
 		<div class="absolute -top-12 right-0 bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-4 py-1.5 rounded-xl shadow-xl text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-primary/20 pointer-events-none">
 			¿Necesitas asesoramiento técnico?
 		</div>

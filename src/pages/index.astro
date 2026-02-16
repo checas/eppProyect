@@ -2,6 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import logoHorizontal from '../assets/logo-horizontal.png';
 import whatsappLogo from '../assets/whatsapp_logo.svg';
+
+import brand3m from '../assets/brand-3m.png';
+import brandConoflex from '../assets/brand-conoflex.png';
+import brandDepascale from '../assets/brand-depascale.png';
+import brandFravida from '../assets/brand-fravida.png';
+import brandLibus from '../assets/brand-libus.png';
+import brandPrentex from '../assets/brand-prentexpng.png';
+
+const waNumber = '5492644399189';
+const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 ---
 
 <Layout title="EPP TOTAL | Seguridad Industrial de Vanguardia">
@@ -14,14 +24,19 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 			<div class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest text-white/85">
 				<a class="nav-link hover:text-primary transition-colors" href="#inicio">Inicio</a>
 				<a class="nav-link hover:text-primary transition-colors" href="#consultoria">Consultoría</a>
-				<a class="nav-link hover:text-primary transition-colors" href="#epp">EPP</a>
+				<a class="nav-link hover:text-primary transition-colors" href="/catalogo">EPP</a>
 				<a class="nav-link hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
 				<a class="nav-link hover:text-primary transition-colors" href="#contacto">Contacto</a>
 			</div>
 			<div class="flex items-center space-x-3 sm:space-x-6">
-				<button class="bg-primary text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm hover:bg-primary/90 transition-all uppercase tracking-wider">
+				<a
+					class="bg-primary text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm hover:bg-primary/90 transition-all uppercase tracking-wider"
+					href={waLink('Hola, necesitaria una cotización')}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					Cotizar
-				</button>
+				</a>
 				<button
 					id="nav-toggle"
 					type="button"
@@ -38,7 +53,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 			<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2 text-sm font-medium uppercase tracking-widest text-white/90">
 				<a class="nav-link py-2" href="#inicio">Inicio</a>
 				<a class="nav-link py-2" href="#consultoria">Consultoría</a>
-				<a class="nav-link py-2" href="#epp">EPP</a>
+				<a class="nav-link py-2" href="/catalogo">EPP</a>
 				<a class="nav-link py-2" href="#nosotros">Nosotros</a>
 				<a class="nav-link py-2" href="#contacto">Contacto</a>
 			</div>
@@ -102,11 +117,16 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 					Protegiendo el futuro de tu industria con tecnología de última generación y asesoría técnica especializada.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4">
-					<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20">
-						Explorar Catálogo
-					</button>
-					<button class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+					<a
+						class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20"
+						href={waLink('Hola, quisiera consultar sobre asesoría técnica')}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Asesoría Técnica
+					</a>
+					<button class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+						Explorar Catálogo
 					</button>
 				</div>
 			</div>
@@ -149,11 +169,13 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 				<div class="max-w-2xl">
 					<h2 class="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-4">Servicios Especializados</h2>
 					<h3 class="text-5xl font-serif text-deep-blue dark:text-white">
-						Mucho más que una tienda, somos tus <span class="italic">aliados estratégicos</span>.
+						Consultoría en Higiene y Seguridad <span class="italic">Laboral</span>
 					</h3>
 				</div>
 				<div class="text-right">
-					<p class="text-gray-500 max-w-xs mb-4">Ofrecemos soluciones integrales para la prevención de riesgos laborales.</p>
+					<p class="text-gray-500 max-w-xs mb-4">
+						Brindamos asesoramiento profesional para ambientes de trabajo <span class="italic">seguros</span>, saludables y eficientes.
+					</p>
 				</div>
 			</div>
 			<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -169,9 +191,9 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 						<p class="text-gray-500 mb-8 leading-relaxed max-w-md">
 							Relevamiento, evaluación de riesgos y planes de acción.
 						</p>
-						<a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest hover:translate-x-2 transition-transform" href="#">
+						<!-- <a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest hover:translate-x-2 transition-transform" href="#">
 							Saber más <span class="material-icons ml-2 text-sm">arrow_forward</span>
-						</a>
+						</a> -->
 					</div>
 				</div>
 
@@ -187,9 +209,9 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 						<p class="text-white/60 mb-8 leading-relaxed">
 							Diseño e implementación de programas de Higiene y Seguridad.
 						</p>
-						<a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest" href="#">
+						<!-- <a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest" href="#">
 							Agendar <span class="material-icons ml-2 text-sm">calendar_today</span>
-						</a>
+						</a> -->
 					</div>
 				</div>
 
@@ -220,96 +242,18 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 		</div>
 	</section>
 
-	<!-- Categories Carousel Section -->
-	<section id="epp" class="py-24 bg-deep-blue overflow-hidden">
-		<div class="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-center">
-			<h2 class="text-4xl text-white font-serif">Categorías <span class="text-primary italic">Destacadas</span></h2>
-			<div class="flex items-center space-x-4">
-				<a
-					class="hidden sm:inline-flex items-center bg-primary text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-all"
-					href="/catalogo"
-				>
-					Ver catálogo
-					<span class="material-icons ml-2 text-sm">arrow_forward</span>
-				</a>
-				<button class="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-deep-blue transition-all">
-					<span class="material-icons">west</span>
-				</button>
-				<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:scale-105 transition-all">
-					<span class="material-icons">east</span>
-				</button>
-			</div>
-		</div>
-		<div class="flex space-x-8 px-6 overflow-x-auto pb-12 scrollbar-hide">
-			<!-- Category Card 1 -->
-			<div class="min-w-[400px] h-[500px] bg-white/5 rounded-3xl relative group overflow-hidden">
-				<div class="absolute inset-0 flex items-center justify-center opacity-10">
-					<span class="text-9xl font-bold uppercase tracking-tighter text-white">VISUAL</span>
-				</div>
-				<div class="absolute inset-0 p-12 flex flex-col justify-end">
-					<img
-						class="w-full h-64 object-contain mb-8 group-hover:scale-110 transition-transform duration-500"
-						data-alt="Premium protective safety goggles"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuApTFsQndwlI-Q1Ji89KzNgukIxTIMgo3AiCKb9h9p2gzp_lJy7jtKpkjSiwt0UmAfxcwsUgAvAHHD0aaNlfgp7yw7AFPUgIHe_-tE-qXtAql4SiIlV1rFur311p16tFQFaaHuMXGrG8p1Uu8R7WVzXL823rt3G2zvG2LbdMy_ws7KfdWSGj5Zph-xfH2u9WeYGOrjpwkYVPyNHnSux1YR17nu9PYaqp6ejCpUMHMDNs_D6fz6J1gVZhtNR9vuTqb8eg4HTdmOVE0E"
-					/>
-					<h5 class="text-3xl text-white font-bold mb-2">Protección Visual</h5>
-					<p class="text-white/40 mb-6 uppercase tracking-widest text-xs">Lentes, Goggles, Caretas</p>
-					<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-						<span class="material-icons">add</span>
-					</button>
-				</div>
-			</div>
-			<!-- Category Card 2 -->
-			<div class="min-w-[400px] h-[500px] bg-white/5 rounded-3xl relative group overflow-hidden border border-primary/20">
-				<div class="absolute inset-0 flex items-center justify-center opacity-10">
-					<span class="text-9xl font-bold uppercase tracking-tighter text-white">HEAD</span>
-				</div>
-				<div class="absolute inset-0 p-12 flex flex-col justify-end">
-					<img
-						class="w-full h-64 object-contain mb-8 group-hover:scale-110 transition-transform duration-500"
-						data-alt="Professional safety helmet"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnEKmMjfN_DhEszfhSt8CEB_8RDMlY-FGgDvRlxhmR4VD-RdEvUvtzAm7ZFZiUBJbJvHBvDKQv1gHdSlqBeEbNhFeAt4KsD_nbecrGX5bEfZf-5tTxzT0T5IniMx0F2aUf0w95bY4LOBYSDt5MOqL7SNE4eCxntUmJM-9lQ83t-ywiYq277oMQBpJ-aR1DddmellxuduE7jrExacK9QqMlMwru5iJJpmOO1Q3jVG29r9efow0wa4RrnqveKredrwKcaf62ly1BxSc"
-					/>
-					<h5 class="text-3xl text-white font-bold mb-2">Protección Craneal</h5>
-					<p class="text-white/40 mb-6 uppercase tracking-widest text-xs">Cascos, Cofias, Linternas</p>
-					<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-						<span class="material-icons">add</span>
-					</button>
-				</div>
-			</div>
-			<!-- Category Card 3 -->
-			<div class="min-w-[400px] h-[500px] bg-white/5 rounded-3xl relative group overflow-hidden">
-				<div class="absolute inset-0 flex items-center justify-center opacity-10">
-					<span class="text-9xl font-bold uppercase tracking-tighter text-white">HANDS</span>
-				</div>
-				<div class="absolute inset-0 p-12 flex flex-col justify-end">
-					<img
-						class="w-full h-64 object-contain mb-8 group-hover:scale-110 transition-transform duration-500"
-						data-alt="Industrial safety gloves"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Y6Wr__3N7wPQZciwGQG1Jl4_rvpzXRIdkjAauH0C-VhNtPq-Q-3ZTTVOzeVtWAjKIQahvi3AoqSgEPD80qOKsdW2sIBXhS7JBe76vO-XZ3qHdcmU56iv6bpJoCfl_kI3ItDLIGsMyLqhXLFkeVoYsAz2C_m-uYsotdDo3U69ER7fCneewol6YsmmjuNcGF3osA206eypkjD69Hm0bYecfd4uMl9VK_FHIR6n0H5zo2wjGl-6vGrqwwpRTJeYGS4gbPHQ8ZmKsgo"
-					/>
-					<h5 class="text-3xl text-white font-bold mb-2">Protección Manual</h5>
-					<p class="text-white/40 mb-6 uppercase tracking-widest text-xs">Guantes de Nitrilo, Cuero, Anticorte</p>
-					<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-						<span class="material-icons">add</span>
-					</button>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- About / Nosotros Section -->
-	<section id="nosotros" class="py-24 bg-background-light dark:bg-zinc-950">
+	<section id="nosotros" class="py-24 bg-deep-blue">
 		<div class="max-w-7xl mx-auto px-6">
 			<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
 				<div class="max-w-2xl">
 					<h2 class="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-4">Sobre Nosotros</h2>
-					<h3 class="text-5xl font-serif text-deep-blue dark:text-white">
+					<h3 class="text-5xl font-serif text-white">
 						Compromiso con la <span class="italic">prevención</span> y la excelencia <span class="font-display font-bold text-primary">técnica</span>.
 					</h3>
 				</div>
 				<div class="text-right">
-					<p class="text-gray-500 max-w-xs mb-4">Acompañamos a las organizaciones con consultoría y provisión de EPP certificado.</p>
+					<p class="text-white/60 max-w-xs mb-4">Acompañamos a las organizaciones con consultoría y provisión de EPP certificado.</p>
 				</div>
 			</div>
 
@@ -318,8 +262,8 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 					<div class="relative pl-8">
 						<div class="absolute left-0 top-0 bottom-0 w-px bg-primary/25"></div>
 						<div class="absolute left-[-6px] top-1 w-3 h-3 rounded-full bg-primary"></div>
-						<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-3">Misión</h4>
-						<p class="text-gray-600 dark:text-white/70 leading-relaxed">
+						<h4 class="text-2xl font-bold text-white mb-3">Misión</h4>
+						<p class="text-white/60 leading-relaxed">
 							Prestar servicios de consultoría especializada en materia de Higiene y Seguridad laboral, orientados a la prevención
 							de riesgos y la mejora continua de las condiciones de trabajo. Asimismo, proveer EPP certificados y homologados que
 							cumplan con los más altos estándares y normativas vigentes.
@@ -329,8 +273,8 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 					<div class="relative pl-8">
 						<div class="absolute left-0 top-0 bottom-0 w-px bg-primary/25"></div>
 						<div class="absolute left-[-6px] top-1 w-3 h-3 rounded-full bg-primary"></div>
-						<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-3">Visión</h4>
-						<p class="text-gray-600 dark:text-white/70 leading-relaxed">
+						<h4 class="text-2xl font-bold text-white mb-3">Visión</h4>
+						<p class="text-white/60 leading-relaxed">
 							Constituirnos como una empresa de referencia a nivel regional y nacional en higiene y seguridad en el trabajo,
 							destacándonos por la excelencia técnica, la confiabilidad de nuestros productos y servicios, y el compromiso con
 							entornos laborales seguros, saludables y sostenibles.
@@ -340,8 +284,8 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 					<div class="relative pl-8">
 						<div class="absolute left-0 top-0 bottom-0 w-px bg-primary/25"></div>
 						<div class="absolute left-[-6px] top-1 w-3 h-3 rounded-full bg-primary"></div>
-						<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-3">Propósito</h4>
-						<p class="text-gray-600 dark:text-white/70 leading-relaxed">
+						<h4 class="text-2xl font-bold text-white mb-3">Propósito</h4>
+						<p class="text-white/60 leading-relaxed">
 							Contribuir activamente a la protección de los trabajadores mediante estrategias integrales de prevención de riesgos
 							laborales, complementadas con la provisión de EPP certificados; reducir la exposición a peligros, fomentar una cultura
 							preventiva y acompañar a las organizaciones en el cumplimiento de sus obligaciones legales.
@@ -350,7 +294,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 				</div>
 
 				<div class="lg:col-span-5">
-					<div class="bg-white dark:bg-zinc-900 rounded-3xl border border-gray-100 dark:border-zinc-800 p-10 relative overflow-hidden">
+					<div class="bg-white/5 rounded-3xl border border-white/10 p-10 relative overflow-hidden">
 						<div class="absolute top-0 right-0 p-8">
 							<span class="material-icons text-7xl text-primary/10">verified</span>
 						</div>
@@ -358,8 +302,8 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 							<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
 								<span class="material-icons text-primary">bolt</span>
 							</div>
-							<h4 class="text-2xl font-bold text-deep-blue dark:text-white mb-4">¿Por qué elegirnos?</h4>
-							<ul class="space-y-4 text-sm text-gray-600 dark:text-white/70">
+							<h4 class="text-2xl font-bold text-white mb-4">¿Por qué elegirnos?</h4>
+							<ul class="space-y-4 text-sm text-white/60">
 								<li class="flex gap-3">
 									<span class="material-icons text-primary text-base leading-5">check_circle</span>
 									<span>Soluciones integrales: consultoría + EPP</span>
@@ -385,15 +329,16 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	</section>
 
 	<!-- Partners / Trust -->
-	<section id="marcas" class="py-20 bg-deep-blue">
+	<section id="marcas" class="py-20 bg-background-light/80 dark:bg-zinc-950">
 		<div class="max-w-7xl mx-auto px-6">
-			<p class="text-center text-white/50 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
-			<div class="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700 text-white">
-				<span class="text-2xl font-black">INDUSTRIAS-X</span>
-				<span class="text-2xl font-black italic">GLOBAL_CORP</span>
-				<span class="text-2xl font-black">STARK_IND</span>
-				<span class="text-2xl font-black">TECH_MINING</span>
-				<span class="text-2xl font-black italic">CONSTRUC_MAX</span>
+			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
+			<div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
+				<img src={brand3m.src} alt="3M" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
+				<img src={brandConoflex.src} alt="Conoflex" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
+				<img src={brandDepascale.src} alt="Depascale" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
+				<img src={brandFravida.src} alt="Fravida" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
+				<img src={brandLibus.src} alt="Libus" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
+				<img src={brandPrentex.src} alt="Prentex" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
 			</div>
 		</div>
 	</section>
@@ -401,7 +346,7 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 	<!-- Footer -->
 	<footer id="contacto" class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
 		<div class="max-w-7xl mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-16">
+			<div class="grid grid-cols-1 md:grid-cols-1 gap-16 md:gap-24 mb-16">
 				<div class="col-span-1 md:col-span-1">
 					<div class="flex items-center space-x-2 mb-8">
 						<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-9 w-auto" loading="lazy" />
@@ -409,6 +354,9 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 					<p class="text-gray-500 text-sm leading-relaxed mb-8">
 						Líderes en suministro y consultoría de seguridad industrial para empresas de alto rendimiento en toda la región.
 					</p>
+					<a class="inline-flex items-center text-sm text-gray-500 hover:text-primary transition-colors mb-8" href="mailto:contacto@epptotal.com.ar">
+						contacto@epptotal.com.ar
+					</a>
 					<div class="flex space-x-4">
 						<a
 							class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-all"
@@ -432,29 +380,25 @@ import whatsappLogo from '../assets/whatsapp_logo.svg';
 						</a>
 					</div>
 				</div>
-				<div>
-					<h6 class="font-bold text-deep-blue dark:text-white mb-8 uppercase text-xs tracking-widest">Productos</h6>
-					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 text-sm text-gray-500">
-						<li><a class="hover:text-primary transition-colors" href="#">Protección Facial</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Equipos de Altura</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Calzado Industrial</a></li>
-						<li><a class="hover:text-primary transition-colors" href="#">Ropa de Trabajo</a></li>
-					</ul>
-				</div>
 			</div>
 			<div class="border-t border-gray-100 dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 				<p class="text-xs text-gray-400">© 2026 EPP TOTAL S.A. Todos los derechos reservados.</p>
 				<div class="flex space-x-6 text-xs text-gray-400">
-					<a class="hover:text-primary" href="#">Términos</a>
-					<a class="hover:text-primary" href="#">Privacidad</a>
-					<a class="hover:text-primary" href="#">Cookies</a>
+					<a class="hover:text-primary" href="/terminos">Términos</a>
+					<a class="hover:text-primary" href="/privacidad">Privacidad</a>
+					<a class="hover:text-primary" href="/cookies">Cookies</a>
 				</div>
 			</div>
 		</div>
 	</footer>
 
 	<!-- Floating WhatsApp Button -->
-	<a class="fixed bottom-8 right-8 z-50 group" href="#">
+	<a
+		class="fixed bottom-8 right-8 z-50 group"
+		href={waLink('Hola, quisiera consultar sobre asesoría técnica')}
+		target="_blank"
+		rel="noopener noreferrer"
+	>
 		<div class="flex items-center">
 			<div
 				class="bg-white px-4 py-2 rounded-full shadow-xl mr-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none translate-x-4 group-hover:translate-x-0 transform duration-300"
