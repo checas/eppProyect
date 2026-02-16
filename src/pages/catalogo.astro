@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import logoHorizontal from '../assets/logo-horizontal.png';
 import whatsappLogo from '../assets/whatsapp_logo.svg';
-import { catalogoProducts } from '../data/catalogo';
+import catalogoProducts from '../data/catalogo.json';
 
 const waNumber = '5492644399189';
 const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
