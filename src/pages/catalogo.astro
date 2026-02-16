@@ -2,69 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import logoHorizontal from '../assets/logo-horizontal.png';
 import whatsappLogo from '../assets/whatsapp_logo.svg';
+import { catalogoProducts } from '../data/catalogo';
 
 const waNumber = '5492644399189';
 const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 
-const products = [
-	{
-		id: 'p1',
-		brand: 'MSA Safety',
-		name: 'Casco V-Gard H1 Trivent Ventilación',
-		category: 'Protección Craneana',
-		description:
-			'Casco de seguridad industrial con diseño ergonómico y ventilación, ideal para jornadas extensas. Compatible con accesorios y configuraciones de ajuste por matraca.',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuDlXmoNLgkgqMx8js_u5Ui12DqyHfH-V9_1aQVzVyaFn-Ts4n54l6s5AvaLgtYKXH426In_AzQ-VFyY6X2CZNS1FaATCYTLc3CPze0MLwVSohlR_LH0GT08mNLvV41uI9Tdz2Fs1xhtvyXF50Bj4_vk4zp95qD3E6racCLYI6MdT_4g3bYutTksiBzwwtjryl2eggWD0yorrBvZ1xyfSjVyewqRE0lKk0paZm4g9mi_dR8OF-UpE0_ZhE18c64IVyhWavkDfsjvzIs',
-		specs: [
-			{ label: 'Material', value: 'Polietileno' },
-			{ label: 'Ajuste', value: 'Matraca' },
-			{ label: 'Norma', value: 'ANSI Z89.1' },
-		],
-	},
-	{
-		brand: 'Libus',
-		name: 'Casco Milenium Full Brim Amarillo',
-		category: 'Protección Craneana',
-		description:
-			'Casco con ala completa (full brim) para mayor cobertura. Recomendado para uso general en planta y obra, con opciones dieléctricas según modelo.',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuACDY7uJwfSIwIC4dHRp-0VzcBbcDH7i_LbUNODMCMI8YK6eCjq04CxJI4Nj4XNFQeLyglnPWCNor_nQRAFHJMgy4QhVb5b9GaGtDfa4HGXkInWp5jKC6STtE_JMrWIqkBdj6SjXJOFsX62_MSmjavFdPslut21S6c3hG6f_P8Ck-x9kn30RF6Nau5XSQebwGfS9cenR49B8Fx7FSZKLRRXqAAPyb0z6IVemxc_NnUZyf4pGez4Y6UPgQ7dgszjlwPMrEyNdySQS8Y',
-		specs: [
-			{ label: 'Aislación', value: 'Dieléctrico' },
-			{ label: 'Peso', value: '420g' },
-			{ label: 'Soporte', value: '6 Puntos' },
-		],
-	},
-	{
-		brand: '3M Industrial',
-		name: 'Casco de Seguridad H-700 Naranja',
-		category: 'Protección Craneana',
-		description:
-			'Casco clásico de alta visibilidad para entornos industriales. Apto para combinar con protectores faciales y accesorios según necesidad operativa.',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuDi9KnxrfWNyviW_bzGeYfgRnRSiSTwyHPH6jrCJ57x8DyjubTv4G--7lewrZ3RLoZKjAtSXfQW3S4ttj7UZ-_SWhECltelgsGVguEh8yc-v3BMwr90LqVNoUakVBxseczrYRdy0Rb7yYOxql1c0maxt7iBy0midtD9RQ_WOwYxi62KeXXhGvknKcfz4PcABfLfnOM12IXpapnt9jmP2x7uoB5Kke1sjbFmFPsVdWsPf2Wwz3aAug-iozF7bqdRxgGVSooz8zbFfrU',
-		specs: [
-			{ label: 'Serie', value: 'H-700' },
-			{ label: 'Ventilación', value: 'Sí' },
-			{ label: 'Categoría', value: 'Tipo I' },
-		],
-	},
-	{
-		brand: 'MSA Safety',
-		name: 'Casco V-Gard Clásico Azul Real',
-		category: 'Protección Craneana',
-		description:
-			'Casco robusto para tareas generales con enfoque en confort y ajuste. Ideal para equipamiento corporativo por su durabilidad y disponibilidad de repuestos.',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuCYarCGRAviht1OHokK_z6DafS_v9WGNKMdBMl_pBVbx7zsQabt2TaAVQ_E5uM4ix_i7dFmdXYpckf0Y6qpJgZsKKL9mTbsPO1rT73RqjvuFnNhZZvGd81H6QN5_IkY3Ves859kmiF-ykMWyZ0K1r8hQImYoZoY2jSujiYTpa_hILKy-k6-TNmyaMVv6rMpgf36jaqhQ30Vu0ONRYB7HchM7cFgHRyK6kzfC2I9NrYoUaEJoSnB-JPiibrUPRTJlMUXWPRXlgU7Emo',
-		specs: [
-			{ label: 'Ajuste', value: 'Cremallera' },
-			{ label: 'Slot Accesorios', value: 'Universal' },
-			{ label: 'Visera', value: 'Reducida' },
-		],
-	},
-];
+const products = catalogoProducts;
 ---
 
 <Layout title="Catálogo | EPP TOTAL">
@@ -193,29 +136,23 @@ const products = [
 							type="button"
 							class="text-left group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary transition-all duration-300"
 							data-product
+							data-category={p.category}
 							data-brand={p.brand}
 							data-name={p.name}
 							data-description={p.description}
-							data-image={p.image}
+							data-image={p.productImage}
+							data-brand-image={p.brandImage ?? ''}
 						>
-							<div class="relative bg-slate-50 dark:bg-slate-800 aspect-square overflow-hidden">
-								<img class="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500" alt={p.name} src={p.image} />
-								<div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
-									<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-										<p class="text-xs font-bold text-primary uppercase mb-2">Especificaciones</p>
-										<ul class="text-[11px] space-y-1 text-slate-600 dark:text-slate-400">
-											{p.specs.map((s, idx) => (
-												<li class={`flex justify-between ${idx !== p.specs.length - 1 ? 'border-b border-slate-100 dark:border-slate-700 pb-1' : ''}`}>
-													<span>{s.label}:</span>
-													<span class="font-medium">{s.value}</span>
-												</li>
-											))}
-										</ul>
-									</div>
-								</div>
+							<div class="relative h-56 bg-slate-50 dark:bg-slate-800 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+								<img src={p.productImage} alt={p.name} class="w-full h-full object-contain p-8 group-hover:scale-[1.03] transition-transform" loading="lazy" />
 							</div>
 							<div class="p-5">
-								<span class="text-[10px] font-bold text-primary tracking-widest uppercase mb-1 block">{p.brand}</span>
+								<p class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2">{p.category}</p>
+								<div class="flex items-center justify-between gap-4 mb-2">
+									<span class="text-[10px] font-bold text-slate-500 dark:text-white/70 tracking-widest uppercase">{p.brand}</span>
+									{p.brandImage ? <img src={p.brandImage} alt={p.brand} class="h-6 w-auto object-contain" loading="lazy" /> : null}
+								</div>
 								<h3 class="font-bold text-lg mb-4 leading-tight text-deep-blue dark:text-white">{p.name}</h3>
 								<div class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors">
 									<img src={whatsappLogo.src} alt="WhatsApp" class="w-5 h-5" loading="lazy" />
@@ -256,7 +193,11 @@ const products = [
 		<div class="p-6 sm:p-8">
 			<div class="flex items-start justify-between gap-6 mb-6">
 				<div>
-					<p id="product-modal-brand" class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2"></p>
+					<p id="product-modal-category" class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2"></p>
+					<div class="flex items-center gap-3">
+						<p id="product-modal-brand" class="text-[10px] font-bold text-slate-500 dark:text-white/70 tracking-widest uppercase"></p>
+						<img id="product-modal-brand-image" alt="" class="h-6 w-auto object-contain" loading="lazy" />
+					</div>
 					<h2 id="product-modal-name" class="text-2xl sm:text-3xl font-bold text-deep-blue dark:text-white leading-snug"></h2>
 				</div>
 				<button
@@ -299,17 +240,21 @@ const products = [
 			const modal = document.getElementById('product-modal');
 			if (!(modal instanceof HTMLDialogElement)) return;
 
+			const categoryEl = document.getElementById('product-modal-category');
 			const brandEl = document.getElementById('product-modal-brand');
 			const nameEl = document.getElementById('product-modal-name');
 			const descEl = document.getElementById('product-modal-description');
 			const imgEl = document.getElementById('product-modal-image');
 			const waEl = document.getElementById('product-modal-whatsapp');
+			const brandImgEl = document.getElementById('product-modal-brand-image');
 
+			if (!(categoryEl instanceof HTMLElement)) return;
 			if (!(brandEl instanceof HTMLElement)) return;
 			if (!(nameEl instanceof HTMLElement)) return;
 			if (!(descEl instanceof HTMLElement)) return;
 			if (!(imgEl instanceof HTMLImageElement)) return;
 			if (!(waEl instanceof HTMLAnchorElement)) return;
+			if (!(brandImgEl instanceof HTMLImageElement)) return;
 
 			const closeButtons = modal.querySelectorAll('[data-close-modal]');
 			closeButtons.forEach((btn) => {
@@ -325,16 +270,29 @@ const products = [
 			cards.forEach((card) => {
 				card.addEventListener('click', () => {
 					if (!(card instanceof HTMLElement)) return;
+					const category = card.getAttribute('data-category') ?? '';
 					const brand = card.getAttribute('data-brand') ?? '';
 					const name = card.getAttribute('data-name') ?? '';
 					const description = card.getAttribute('data-description') ?? '';
 					const image = card.getAttribute('data-image') ?? '';
+					const brandImage = card.getAttribute('data-brand-image') ?? '';
 
+					categoryEl.textContent = category;
 					brandEl.textContent = brand;
 					nameEl.textContent = name;
 					descEl.textContent = description;
 					imgEl.src = image;
 					imgEl.alt = name;
+
+					if (brandImage) {
+						brandImgEl.src = brandImage;
+						brandImgEl.alt = brand;
+						brandImgEl.classList.remove('hidden');
+					} else {
+						brandImgEl.removeAttribute('src');
+						brandImgEl.setAttribute('alt', '');
+						brandImgEl.classList.add('hidden');
+					}
 
 					waEl.href = `https://wa.me/5492644399189?text=${encodeURIComponent(`Hola, quisiera consultar por el producto: ${name}`)}`;
 

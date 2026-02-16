@@ -3,12 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import logoHorizontal from '../assets/logo-horizontal.png';
 import whatsappLogo from '../assets/whatsapp_logo.svg';
 
-import brand3m from '../assets/brand-3m.png';
-import brandConoflex from '../assets/brand-conoflex.png';
-import brandDepascale from '../assets/brand-depascale.png';
-import brandFravida from '../assets/brand-fravida.png';
-import brandLibus from '../assets/brand-libus.png';
-import brandPrentex from '../assets/brand-prentexpng.png';
+type BrandLogoModule = string | { src: string };
+const brandLogoModules = import.meta.glob<BrandLogoModule>('../assets/brand-*.{png,jpg,jpeg,webp,svg}', { eager: true, import: 'default' });
+const brandLogos = Object.entries(brandLogoModules)
+	.map(([path, mod]) => {
+		const filename = path.split('/').pop() ?? '';
+		const alt = filename.replace(/^brand-/, '').replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim();
+		const src = typeof mod === 'string' ? mod : mod.src;
+		return { src, alt };
+	})
+	.sort((a, b) => a.alt.localeCompare(b.alt));
 
 const waNumber = '5492644399189';
 const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
@@ -333,12 +337,14 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 		<div class="max-w-7xl mx-auto px-6">
 			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
 			<div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-				<img src={brand3m.src} alt="3M" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
-				<img src={brandConoflex.src} alt="Conoflex" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
-				<img src={brandDepascale.src} alt="Depascale" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
-				<img src={brandFravida.src} alt="Fravida" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
-				<img src={brandLibus.src} alt="Libus" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
-				<img src={brandPrentex.src} alt="Prentex" class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]" loading="lazy" />
+				{brandLogos.map((logo) => (
+					<img
+						src={logo.src}
+						alt={logo.alt}
+						class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]"
+						loading="lazy"
+					/>
+				))}
 			</div>
 		</div>
 	</section>
