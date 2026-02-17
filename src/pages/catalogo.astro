@@ -2,12 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import logoHorizontal from '../assets/logo-horizontal.png';
 import whatsappLogo from '../assets/whatsapp_logo.svg';
-import { catalogoProducts } from '../data/catalogo';
+import catalogoProducts from '../data/catalogo.json';
 
 const waNumber = '5492644399189';
 const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 
 const products = catalogoProducts;
+
+const uniqueSorted = (items: string[]) => Array.from(new Set(items.map((s) => s.trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b));
+const categories = uniqueSorted(products.map((p) => p.category ?? ''));
+const brandsRaw = products.map((p) => (p.brand ?? '').trim());
+const hasGenericBrand = brandsRaw.some((b) => !b);
+const brands = uniqueSorted(brandsRaw.filter(Boolean));
 ---
 
 <Layout title="Catálogo | EPP TOTAL">
@@ -18,10 +24,8 @@ const products = catalogoProducts;
 					<img src={logoHorizontal.src} alt="EPP TOTAL" class="h-8 w-auto" loading="eager" />
 				</a>
 				<nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="/">Inicio</a>
 					<a class="hover:text-primary transition-colors border-b-2 border-primary pb-1" href="/catalogo">Catálogo</a>
-					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="#">Certificaciones</a>
-					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="#">Empresas</a>
-					<a class="hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="/#contacto">Contacto</a>
 				</nav>
 			</div>
 			<div class="hidden md:flex items-center gap-4 flex-1 max-w-md ml-8">
@@ -30,6 +34,7 @@ const products = catalogoProducts;
 						class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-2.5 pl-4 pr-10 text-sm focus:ring-2 focus:ring-primary/50"
 						placeholder="Buscar protección, calzado o marca..."
 						type="text"
+						id="search-input"
 					/>
 					<span class="material-icons absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-base">search</span>
 				</div>
@@ -50,76 +55,56 @@ const products = catalogoProducts;
 					<div>
 						<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Categoría</h3>
 						<div class="space-y-2">
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input checked type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm font-medium group-hover:text-primary transition-colors">Protección Craneana</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Protección Visual</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Calzado de Seguridad</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Protección Manual</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Trabajo en Altura</span>
-							</label>
+							{categories.map((c) => (
+								<label class="flex items-center gap-3 cursor-pointer group">
+									<input
+										type="checkbox"
+										checked
+										value={c}
+										data-filter-category
+										class="rounded border-slate-300 text-primary focus:ring-primary"
+									/>
+									<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">{c}</span>
+								</label>
+							))}
 						</div>
 					</div>
 					<div class="pt-6 border-t border-slate-200 dark:border-slate-800">
 						<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Marca</h3>
 						<div class="space-y-2">
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">3M</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">MSA</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Libus</span>
-							</label>
-							<label class="flex items-center gap-3 cursor-pointer group">
-								<input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" />
-								<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Ombú</span>
-							</label>
+							{brands.map((b) => (
+								<label class="flex items-center gap-3 cursor-pointer group">
+									<input
+										type="checkbox"
+										checked
+										value={b}
+										data-filter-brand
+										class="rounded border-slate-300 text-primary focus:ring-primary"
+									/>
+									<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">{b}</span>
+								</label>
+							))}
+							{hasGenericBrand ? (
+								<label class="flex items-center gap-3 cursor-pointer group">
+									<input
+										type="checkbox"
+										checked
+										value="Generico"
+										data-filter-brand
+										class="rounded border-slate-300 text-primary focus:ring-primary"
+									/>
+									<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Genérico</span>
+								</label>
+							) : null}
 						</div>
 					</div>
 				</div>
 			</aside>
 
 			<div class="flex-1">
-				<div class="mb-8 rounded-2xl overflow-hidden bg-slate-900 relative">
-					<img
-						class="w-full h-48 object-cover opacity-50"
-						alt="Fondo de catálogo"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRDJEhl2r3GygbOUPDFUMWC-4NeBdChc9mpdWNn7Ic7A9v6nZTviCOIlSC-SduoVeYSsgx2HwTdCWvjwuWLRGzPf1iD3whx42a6ELVg_DHvvp1krANRaid9gnvObY-JLggWy0TREwxc0AV89A2zHZ8CUI_CrWE7z171Jjv2TQK6vmqUvDLe-nzC0-t9U-nZImNLrD--Spa38sADgZTuq_1SD5g0_PI5IQ-Mw5Ml7YIeWNdwxFY3tHD50IqH1yMX2lQ4_elTDqdWzI"
-					/>
-					<div class="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-r from-slate-900 to-transparent">
-						<nav class="flex text-xs text-primary/80 gap-2 mb-2">
-							<span>Catálogo</span>
-							<span>/</span>
-							<span>Protección Industrial</span>
-						</nav>
-						<h1 class="text-3xl font-bold text-white mb-2">Protección Craneana</h1>
-						<p class="max-w-md text-slate-300 text-sm leading-relaxed">
-							Equipamiento de alta resistencia diseñado para mitigar impactos y garantizar la seguridad del personal en entornos de alto riesgo.
-							Certificaciones ANSI e IRAM vigentes.
-						</p>
-					</div>
-				</div>
-
 				<div class="flex items-center justify-between mb-6">
 					<p class="text-sm text-slate-500 dark:text-slate-400">
-						Mostrando <span class="font-bold text-slate-800 dark:text-white">{products.length}</span> productos
+						Mostrando <span id="results-count" class="font-bold text-slate-800 dark:text-white">{products.length}</span> productos
 					</p>
 					<div class="flex items-center gap-4">
 						<select class="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-primary py-1.5">
@@ -138,10 +123,11 @@ const products = catalogoProducts;
 							data-product
 							data-category={p.category}
 							data-brand={p.brand}
+							data-brand-filter={(p.brand?.trim() ? p.brand.trim() : 'Generico')}
 							data-name={p.name}
 							data-description={p.description}
+							data-features={JSON.stringify(p.features ?? [])}
 							data-image={p.productImage}
-							data-brand-image={p.brandImage ?? ''}
 						>
 							<div class="relative h-56 bg-slate-50 dark:bg-slate-800 overflow-hidden">
 								<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -151,7 +137,6 @@ const products = catalogoProducts;
 								<p class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2">{p.category}</p>
 								<div class="flex items-center justify-between gap-4 mb-2">
 									<span class="text-[10px] font-bold text-slate-500 dark:text-white/70 tracking-widest uppercase">{p.brand}</span>
-									{p.brandImage ? <img src={p.brandImage} alt={p.brand} class="h-6 w-auto object-contain" loading="lazy" /> : null}
 								</div>
 								<h3 class="font-bold text-lg mb-4 leading-tight text-deep-blue dark:text-white">{p.name}</h3>
 								<div class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors">
@@ -161,26 +146,6 @@ const products = catalogoProducts;
 							</div>
 						</button>
 					))}
-				</div>
-
-				<div class="mt-12 flex items-center justify-center gap-2">
-					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-primary transition-colors">
-						<span class="material-icons">chevron_left</span>
-					</button>
-					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-white font-bold">1</button>
-					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold hover:border-primary transition-colors">
-						2
-					</button>
-					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold hover:border-primary transition-colors">
-						3
-					</button>
-					<span class="mx-2 text-slate-400">...</span>
-					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold hover:border-primary transition-colors">
-						12
-					</button>
-					<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-primary transition-colors">
-						<span class="material-icons">chevron_right</span>
-					</button>
 				</div>
 			</div>
 		</div>
@@ -194,10 +159,7 @@ const products = catalogoProducts;
 			<div class="flex items-start justify-between gap-6 mb-6">
 				<div>
 					<p id="product-modal-category" class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2"></p>
-					<div class="flex items-center gap-3">
-						<p id="product-modal-brand" class="text-[10px] font-bold text-slate-500 dark:text-white/70 tracking-widest uppercase"></p>
-						<img id="product-modal-brand-image" alt="" class="h-6 w-auto object-contain" loading="lazy" />
-					</div>
+					<p id="product-modal-brand" class="text-[10px] font-bold text-slate-500 dark:text-white/70 tracking-widest uppercase"></p>
 					<h2 id="product-modal-name" class="text-2xl sm:text-3xl font-bold text-deep-blue dark:text-white leading-snug"></h2>
 				</div>
 				<button
@@ -213,7 +175,14 @@ const products = catalogoProducts;
 			<div class="rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-6">
 				<img id="product-modal-image" alt="" class="w-full h-72 object-contain p-8" />
 			</div>
-			<p id="product-modal-description" class="text-sm text-gray-600 dark:text-white/70 leading-relaxed"></p>
+			<div id="product-modal-features-wrapper" class="mt-6 hidden">
+				<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Características</h3>
+				<ul id="product-modal-features" class="space-y-2 text-sm text-gray-600 dark:text-white/70"></ul>
+			</div>
+			<div id="product-modal-description-wrapper" class="mt-6">
+				<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Descripción</h3>
+				<p id="product-modal-description" class="text-sm text-gray-600 dark:text-white/70 leading-relaxed"></p>
+			</div>
 			<div class="mt-8 flex flex-col sm:flex-row gap-3">
 				<a
 					id="product-modal-whatsapp"
@@ -239,22 +208,28 @@ const products = catalogoProducts;
 		(() => {
 			const modal = document.getElementById('product-modal');
 			if (!(modal instanceof HTMLDialogElement)) return;
+			const resultsCount = document.getElementById('results-count');
 
 			const categoryEl = document.getElementById('product-modal-category');
 			const brandEl = document.getElementById('product-modal-brand');
 			const nameEl = document.getElementById('product-modal-name');
+			const descWrapperEl = document.getElementById('product-modal-description-wrapper');
 			const descEl = document.getElementById('product-modal-description');
+			const featuresWrapperEl = document.getElementById('product-modal-features-wrapper');
+			const featuresEl = document.getElementById('product-modal-features');
 			const imgEl = document.getElementById('product-modal-image');
 			const waEl = document.getElementById('product-modal-whatsapp');
-			const brandImgEl = document.getElementById('product-modal-brand-image');
 
 			if (!(categoryEl instanceof HTMLElement)) return;
 			if (!(brandEl instanceof HTMLElement)) return;
 			if (!(nameEl instanceof HTMLElement)) return;
+			if (!(descWrapperEl instanceof HTMLElement)) return;
 			if (!(descEl instanceof HTMLElement)) return;
+			if (!(featuresWrapperEl instanceof HTMLElement)) return;
+			if (!(featuresEl instanceof HTMLUListElement)) return;
 			if (!(imgEl instanceof HTMLImageElement)) return;
 			if (!(waEl instanceof HTMLAnchorElement)) return;
-			if (!(brandImgEl instanceof HTMLImageElement)) return;
+			if (!(resultsCount instanceof HTMLElement)) return;
 
 			const closeButtons = modal.querySelectorAll('[data-close-modal]');
 			closeButtons.forEach((btn) => {
@@ -274,24 +249,41 @@ const products = catalogoProducts;
 					const brand = card.getAttribute('data-brand') ?? '';
 					const name = card.getAttribute('data-name') ?? '';
 					const description = card.getAttribute('data-description') ?? '';
+					const featuresRaw = card.getAttribute('data-features') ?? '[]';
 					const image = card.getAttribute('data-image') ?? '';
-					const brandImage = card.getAttribute('data-brand-image') ?? '';
 
 					categoryEl.textContent = category;
 					brandEl.textContent = brand;
 					nameEl.textContent = name;
 					descEl.textContent = description;
+					descWrapperEl.classList.toggle('hidden', !description.trim());
 					imgEl.src = image;
 					imgEl.alt = name;
 
-					if (brandImage) {
-						brandImgEl.src = brandImage;
-						brandImgEl.alt = brand;
-						brandImgEl.classList.remove('hidden');
+					featuresEl.innerHTML = '';
+					let features = [];
+					try {
+						features = JSON.parse(featuresRaw);
+					} catch {
+						features = [];
+					}
+					if (Array.isArray(features)) {
+						const clean = features.map((f) => (f ?? '').toString().trim()).filter(Boolean);
+						clean.forEach((f) => {
+							const li = document.createElement('li');
+							li.className = 'flex gap-3';
+							const icon = document.createElement('span');
+							icon.className = 'material-icons text-primary text-base leading-5';
+							icon.textContent = 'check_circle';
+							const text = document.createElement('span');
+							text.textContent = f;
+							li.appendChild(icon);
+							li.appendChild(text);
+							featuresEl.appendChild(li);
+						});
+						featuresWrapperEl.classList.toggle('hidden', clean.length === 0);
 					} else {
-						brandImgEl.removeAttribute('src');
-						brandImgEl.setAttribute('alt', '');
-						brandImgEl.classList.add('hidden');
+						featuresWrapperEl.classList.add('hidden');
 					}
 
 					waEl.href = `https://wa.me/5492644399189?text=${encodeURIComponent(`Hola, quisiera consultar por el producto: ${name}`)}`;
@@ -299,6 +291,47 @@ const products = catalogoProducts;
 					modal.showModal();
 				});
 			});
+
+			const categoryInputs = Array.from(document.querySelectorAll('input[data-filter-category]')).filter(
+				(el) => el instanceof HTMLInputElement
+			);
+			const brandInputs = Array.from(document.querySelectorAll('input[data-filter-brand]')).filter(
+				(el) => el instanceof HTMLInputElement
+			);
+			const searchInput = document.getElementById('search-input');
+
+			const norm = (v: string | null | undefined) => (v ?? '').toString().trim().toLowerCase();
+
+			const applyFilters = () => {
+				const selectedCats = new Set(categoryInputs.filter((i) => i.checked).map((i) => norm(i.value)));
+				const selectedBrands = new Set(brandInputs.filter((i) => i.checked).map((i) => norm(i.value)));
+				const q = searchInput instanceof HTMLInputElement ? norm(searchInput.value) : '';
+
+				const catsActive = selectedCats.size > 0;
+				const brandsActive = selectedBrands.size > 0;
+
+				let visible = 0;
+				cards.forEach((card) => {
+					if (!(card instanceof HTMLElement)) return;
+					const c = norm(card.getAttribute('data-category'));
+					const b = norm(card.getAttribute('data-brand-filter'));
+					const n = norm(card.getAttribute('data-name'));
+					const d = norm(card.getAttribute('data-description'));
+					const okCat = !catsActive || selectedCats.has(c);
+					const okBrand = !brandsActive || selectedBrands.has(b);
+					const okQuery = !q || n.includes(q) || d.includes(q) || c.includes(q) || b.includes(q);
+					const show = okCat && okBrand && okQuery;
+					card.classList.toggle('hidden', !show);
+					if (show) visible += 1;
+				});
+
+				resultsCount.textContent = String(visible);
+			};
+
+			categoryInputs.forEach((i) => i.addEventListener('change', applyFilters));
+			brandInputs.forEach((i) => i.addEventListener('change', applyFilters));
+			if (searchInput instanceof HTMLInputElement) searchInput.addEventListener('input', applyFilters);
+			applyFilters();
 		})();
 	</script>
 
