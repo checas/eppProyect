@@ -96,22 +96,38 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 
 	<!-- Hero Section -->
 	<section id="inicio" class="relative h-screen flex items-center overflow-hidden">
+
+
+	<div class="absolute bottom-1/2 right-12 translate-y-1/2 md:right-16 z-30 bottom-[15%]">
+  <img 
+    src={logoHorizontal.src} 
+    alt="EPP Total"
+    class="h-20 md:h-28 w-auto opacity-90 filter drop-shadow-lg"
+  />
+</div>
+
+
+
+
+		
 		<div class="absolute inset-0 z-0">
   <div class="absolute inset-0 bg-gradient-to-r from-deep-blue via-deep-blue/60 to-transparent z-20"></div>
 
   <div id="hero-slider" class="absolute inset-0">
+
   	<img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-1000"
       src="/slider/consultoria.jpg" alt="consultoria" />
 
-    <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-1000"
+    <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
       src="/slider/trabajador-01.png" alt="trabajador con casco" />
 
     <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
       src="/slider/equiposdeseguridad.avif" alt="equiposdeseguridad" />
 
     <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
-      src="slider/trabajoenequipo.webp" alt="Slide 3" />
+      src="/slider/trabajoenequipo.webp" alt="Slide 3" />
   </div>
+
 </div>
 
 	<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
@@ -148,7 +164,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 </div>
 
     <!-- Slide Text 1 -->
-    <div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute inset-0">	 
+    <div class="hero-content-slide opacity-0 transition-opacity duration-1000 absolute inset-0">	 
 		<h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
 		Seguridad <span class="italic font-normal">Industrial</span> de 
 		<span class="font-display font-bold text-primary">Vanguardia</span> 
@@ -293,9 +309,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 						<p class="text-gray-500 mb-8 leading-relaxed max-w-md">
 							Relevamiento, evaluación de riesgos y planes de acción.
 						</p>
-						<!-- <a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest hover:translate-x-2 transition-transform" href="#">
-							Saber más <span class="material-icons ml-2 text-sm">arrow_forward</span>
-						</a> -->
+						
 					</div>
 				</div>
 
@@ -311,9 +325,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 						<p class="text-white/60 mb-8 leading-relaxed">
 							Diseño e implementación de programas de Higiene y Seguridad.
 						</p>
-						<!-- <a class="inline-flex items-center text-primary font-bold uppercase text-xs tracking-widest" href="#">
-							Agendar <span class="material-icons ml-2 text-sm">calendar_today</span>
-						</a> -->
+						
 					</div>
 				</div>
 
