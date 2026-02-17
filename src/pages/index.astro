@@ -100,17 +100,17 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
   <div class="absolute inset-0 bg-gradient-to-r from-deep-blue via-deep-blue/60 to-transparent z-20"></div>
 
   <div id="hero-slider" class="absolute inset-0">
+  	<img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-1000"
+      src="/slider/consultoria.jpg" alt="consultoria" />
+
     <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-1000"
-      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBFXHPVG4SculurCDrtmYcsUmcaAEOBcXEn9uY9Anipi0xDqDhz1RZta2TvLXii_LlkRe_kf9Zr2grfLG4ZoFFYSr_EU7nAO_ZpzjXI-zMixTPtFZ8R-VAgDR5HI978TI4mzd8O7x6VKamPCkt3Wftg-MLL2ZLuGbBWujdmTcPdFqdwpPDpBLCmIp8D1cVWLVA0mfOFnnYtIMsKGXpCrxWWz9f_oU0tWNLmI5NOopBnku6Y7KH3vrFO8be3v8WjH7T3zhMgq5mcU"
-      alt="Slide 1" />
+      src="/slider/trabajador-01.png" alt="trabajador con casco" />
 
     <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
-      src="https://www.ul.com/sites/default/files/styles/hero_boxed_width/public/2022-04/G165829163-Safety-Apparel-ULcom-HEADER-2400x1600.jpg?itok=7YASYAsV"
-      alt="Slide 2" />
+      src="/slider/equiposdeseguridad.avif" alt="equiposdeseguridad" />
 
     <img class="hero-slide w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000"
-      src="https://cdn.shopify.com/s/files/1/0330/7847/6939/files/Builders_check_list.png?v=1646123801"
-      alt="Slide 3" />
+      src="slider/trabajoenequipo.webp" alt="Slide 3" />
   </div>
 </div>
 
@@ -118,12 +118,41 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
   
   <div id="hero-content" class="max-w-2xl relative min-h-[500px] flex items-center">
 
+<!-- Slide Text 0 NUEVO -->
+<div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute top-0 left-0 w-full">
+  <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-serif leading-[1.1] mb-6">
+    Consultoría de Higiene y Seguridad 
+    <span class="italic font-normal">+</span>
+    <span class="font-display font-bold text-primary block">
+      EPP Soluciones Integrales
+    </span>
+  </h1>
+
+  <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
+    Asesoría técnica especializada y suministro de equipos certificados para cada entorno industrial.
+  </p>
+   <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20"
+          href={waLink('Hola, quisiera consultar sobre asesoría técnica')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Asesoría Técnica
+        </a>
+        <a href="/catalogo"
+  		class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center">
+		  Explorar Catálogo
+		</a>
+      </div>
+</div>
 
     <!-- Slide Text 1 -->
-    <div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute inset-0">
-      <h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
-        Seguridad <span class="italic font-normal">Industrial</span> de <span class="font-display font-bold text-primary">Vanguardia</span>
-      </h1>
+    <div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute inset-0">	 
+		<h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
+		Seguridad <span class="italic font-normal">Industrial</span> de 
+		<span class="font-display font-bold text-primary">Vanguardia</span> 
+		</h1>
       <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
         Protegiendo el futuro de tu industria con tecnología de última generación y asesoría técnica especializada.
       </p>
@@ -136,13 +165,10 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
         >
           Asesoría Técnica
         </a>
-        <a 
-  href="/catalogo"
-  class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center"
->
-  Explorar Catálogo
-</a>
-
+        <a href="/catalogo"
+  		class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center">
+		  Explorar Catálogo
+		</a>
       </div>
     </div>
 
@@ -172,6 +198,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 		<div class="absolute bottom-10 right-10 z-20 hidden lg:block">
   <div id="hero-indicators" class="flex flex-col space-y-4">
     <div class="indicator h-1 w-20 bg-primary transition-all duration-500"></div>
+    <div class="indicator h-1 w-12 bg-white/20 transition-all duration-500"></div>
     <div class="indicator h-1 w-12 bg-white/20 transition-all duration-500"></div>
     <div class="indicator h-1 w-12 bg-white/20 transition-all duration-500"></div>
   </div>
@@ -294,7 +321,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 					<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
 						<span class="material-icons text-white">school</span>
 					</div>
-					<h4 class="text-xl font-bold mb-3 dark:text-white">Capacitación</h4>
+					<h4 class="text-xl font-bold mb-3 dark:text-white">Capacitaciones</h4>
 					<p class="text-gray-500 text-sm">Formación práctica para mandos y operarios.</p>
 				</div>
 
