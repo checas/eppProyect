@@ -28,9 +28,10 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 			<div class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest text-white/85">
 				<a class="nav-link hover:text-primary transition-colors" href="#inicio">Inicio</a>
 				<a class="nav-link hover:text-primary transition-colors" href="#consultoria">Consultoría</a>
-				<a class="nav-link hover:text-primary transition-colors" href="/catalogo">Venta de EPP</a>
+				<a href="/catalogo" class="text-primary font-bold">Catálogo & Ventas</a>
 				<a class="nav-link hover:text-primary transition-colors" href="#nosotros">Nosotros</a>
 				<a class="nav-link hover:text-primary transition-colors" href="#contacto">Contacto</a>
+
 			</div>
 			<div class="flex items-center space-x-3 sm:space-x-6">
 				
@@ -50,7 +51,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 			<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2 text-sm font-medium uppercase tracking-widest text-white/90">
 				<a class="nav-link py-2" href="#inicio">Inicio</a>
 				<a class="nav-link py-2" href="#consultoria">Consultoría</a>
-				<a class="nav-link py-2" href="/catalogo">Venta de EPP</a>
+				<a href="/catalogo" class="text-primary font-bold">Catálogo & Ventas</a>
 				<a class="nav-link py-2" href="#nosotros">Nosotros</a>
 				<a class="nav-link py-2" href="#contacto">Contacto</a>
 			</div>
@@ -134,34 +135,38 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
   
   <div id="hero-content" class="max-w-2xl relative min-h-[500px] flex items-center">
 
-<!-- Slide Text 0 NUEVO -->
+<!-- Slide Text 0 NUEVO UNIFICADO -->
 <div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute top-0 left-0 w-full">
   <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-serif leading-[1.1] mb-6">
-    Consultoría de Higiene y Seguridad 
+    Consultoría en Higiene y Seguridad 
     <span class="italic font-normal">+</span>
     <span class="font-display font-bold text-primary block">
-      EPP Soluciones Integrales
+      Venta de EPP Certificados
     </span>
   </h1>
 
   <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
-    Asesoría técnica especializada y suministro de equipos certificados para cada entorno industrial.
+    Diagnosticamos riesgos, diseñamos soluciones y proveemos los equipos homologados
+    que tu industria necesita. Servicio técnico y suministro en un solo lugar.
   </p>
-   <div class="flex flex-col sm:flex-row gap-4">
-        <a
-          class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20"
-          href={waLink('Hola, quisiera consultar sobre asesoría técnica')}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Asesoría Técnica
-        </a>
-        <a href="/catalogo"
-  		class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center">
-		  Explorar Catálogo
-		</a>
-      </div>
+
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a
+      class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/20"
+      href="#consultoria"
+    >
+      Ver Soluciones
+    </a>
+
+    <a
+      href="/catalogo"
+      class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center"
+    >
+      Catálogo & Ventas
+    </a>
+  </div>
 </div>
+
 
     <!-- Slide Text 1 -->
     <div class="hero-content-slide opacity-0 transition-opacity duration-1000 absolute inset-0">	 
@@ -183,7 +188,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
         </a>
         <a href="/catalogo"
   		class="border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all inline-block text-center">
-		  Explorar Catálogo
+		  Catálogo & Ventas
 		</a>
       </div>
     </div>
@@ -356,6 +361,83 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 		</div>
 	</section>
 
+	<!-- Integración Consultoría + Venta -->
+<section class="py-28 px-6 bg-gradient-to-br from-deep-blue to-deep-blue/90 text-white">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <h2 class="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-6">
+        Solución Integral 360°
+      </h2>
+      <h3 class="text-5xl font-serif leading-tight mb-6">
+        De la <span class="italic">Evaluación</span> a la 
+        <span class="font-display font-bold text-primary"> Provisión del EPP</span>
+      </h3>
+      <p class="text-white/70 text-lg leading-relaxed">
+        Diagnosticamos riesgos, diseñamos planes de acción y suministramos los equipos certificados necesarios.
+        Consultoría y venta trabajando en conjunto para una protección real.
+      </p>
+    </div>
+
+    <!-- Proceso -->
+    <div class="grid md:grid-cols-4 gap-8 text-center">
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="text-primary text-4xl font-bold mb-4">01</div>
+        <h4 class="font-bold mb-2">Diagnóstico</h4>
+        <p class="text-white/60 text-sm">Evaluación técnica y análisis de riesgos laborales.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="text-primary text-4xl font-bold mb-4">02</div>
+        <h4 class="font-bold mb-2">Planificación</h4>
+        <p class="text-white/60 text-sm">Diseño de programas y estrategias de prevención.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="text-primary text-4xl font-bold mb-4">03</div>
+        <h4 class="font-bold mb-2">Recomendación EPP</h4>
+        <p class="text-white/60 text-sm">Selección de equipos certificados según normativa vigente.</p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="text-primary text-4xl font-bold mb-4">04</div>
+        <h4 class="font-bold mb-2">Venta & Entrega</h4>
+        <p class="text-white/60 text-sm">Provisión directa del EPP con asesoramiento continuo.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <a 
+        href="/catalogo"
+        class="inline-block bg-primary text-white px-10 py-4 rounded-xl font-bold uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-lg shadow-primary/30"
+      >
+        Ver Catálogo y Soluciones Disponibles
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- Partners / Trust -->
+	<section id="marcas" class="py-20 bg-background-light/80 dark:bg-zinc-950">
+		<div class="max-w-7xl mx-auto px-6">
+			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
+			<div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
+				{brandLogos.map((logo) => (
+					<img
+						src={logo.src}
+						alt={logo.alt}
+						class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]"
+						loading="lazy"
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+
 	<!-- About / Nosotros Section -->
 	<section id="nosotros" class="py-24 bg-deep-blue">
 		<div class="max-w-7xl mx-auto px-6">
@@ -442,22 +524,9 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 		</div>
 	</section>
 
-	<!-- Partners / Trust -->
-	<section id="marcas" class="py-20 bg-background-light/80 dark:bg-zinc-950">
-		<div class="max-w-7xl mx-auto px-6">
-			<p class="text-center text-gray-400 text-xs uppercase tracking-[0.5em] mb-12">Marcas que confían en nuestra precisión</p>
-			<div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-				{brandLogos.map((logo) => (
-					<img
-						src={logo.src}
-						alt={logo.alt}
-						class="h-10 md:h-12 w-auto object-contain [filter:drop-shadow(0_2px_6px_rgba(0,0,0,0.18))]"
-						loading="lazy"
-					/>
-				))}
-			</div>
-		</div>
-	</section>
+	
+
+	
 
 	<!-- Footer -->
 	<footer id="contacto" class="bg-white dark:bg-background-dark pt-24 pb-12 px-6 border-t border-gray-100 dark:border-zinc-800">
