@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import catalogoProducts from '../data/catalogo.json';
+
+const products = catalogoProducts;
+---
+
+<Layout title="Catálogo (PDF) | EPP TOTAL">
+	<main class="bg-white text-slate-900">
+		<div class="mx-auto max-w-4xl px-10 py-12">
+			<h1 class="text-2xl font-extrabold tracking-tight mb-10">Catálogo</h1>
+
+			{products.map((p) => (
+				<section class="product mb-12">
+					<div class="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-2">{p.category}</div>
+					<h2 class="text-xl font-extrabold leading-snug mb-2">{p.name}</h2>
+					{p.brand ? <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">{p.brand}</div> : null}
+
+					{p.productImage ? (
+						<div class="mb-6 border border-slate-200 rounded-xl bg-slate-50 overflow-hidden">
+							<img src={p.productImage} alt={p.name} class="w-full h-72 object-contain p-6" loading="eager" />
+						</div>
+					) : null}
+
+					{Array.isArray(p.features) && p.features.length > 0 ? (
+						<div class="mb-6">
+							<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Características</h3>
+							<ul class="space-y-2 text-sm text-slate-700">
+								{p.features.map((f) => (
+									<li class="flex gap-3">
+										<span class="text-amber-600 font-bold">•</span>
+										<span>{f}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					) : null}
+
+					{p.description ? (
+						<div>
+							<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Descripción</h3>
+							<p class="text-sm text-slate-700 whitespace-pre-line leading-relaxed">{p.description}</p>
+						</div>
+					) : null}
+				</section>
+			))}
+		</div>
+	</main>
+
+	<style is:global>
+		@page {
+			size: A4;
+			margin: 12mm;
+		}
+
+		.product {
+			break-inside: avoid;
+			page-break-inside: avoid;
+			padding-bottom: 12mm;
+			border-bottom: 1px solid #e2e8f0;
+		}
+
+		.product:last-child {
+			border-bottom: none;
+		}
+	</style>
+</Layout>
