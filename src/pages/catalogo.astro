@@ -140,7 +140,9 @@ const brands = uniqueSorted(brandsRaw.filter(Boolean));
 								</div>
 								<h3 class="font-bold text-lg mb-4 leading-tight text-deep-blue dark:text-white">{p.name}</h3>
 								<div class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors">
-									<img src={whatsappLogo.src} alt="WhatsApp" class="w-5 h-5" loading="lazy" />
+									<span class="w-6 h-6 rounded-full bg-white flex items-center justify-center">
+										<img src={whatsappLogo.src} alt="WhatsApp" class="w-4 h-4" loading="lazy" />
+									</span>
 									Consultar ahora
 								</div>
 							</div>
@@ -384,11 +386,17 @@ const brands = uniqueSorted(brandsRaw.filter(Boolean));
 	</footer>
 
 	<a class="fixed bottom-8 right-8 z-[100] group" href={waLink('Hola, quisiera consultar sobre asesoría técnica')} target="_blank" rel="noopener noreferrer">
-		<div class="absolute -top-12 right-0 bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-4 py-1.5 rounded-xl shadow-xl text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-primary/20 pointer-events-none">
-			¿Necesitas asesoramiento técnico?
-		</div>
-		<div class="bg-emerald-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95">
-			<img src={whatsappLogo.src} alt="WhatsApp" class="w-8 h-8" loading="lazy" />
+		<div class="flex items-center">
+			<div
+				class="bg-white dark:bg-slate-800 px-4 py-2 rounded-full shadow-xl mr-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none translate-x-4 group-hover:translate-x-0 transform duration-300"
+			>
+				<span class="text-xs font-bold text-deep-blue dark:text-white">¿Necesitas ayuda técnica?</span>
+			</div>
+			<div
+				class="w-16 h-16 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl hover:scale-110 transition-transform active:scale-95"
+			>
+				<img src={whatsappLogo.src} alt="WhatsApp" class="w-10 h-10" loading="lazy" />
+			</div>
 		</div>
 	</a>
 </Layout>

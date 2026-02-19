@@ -6,7 +6,7 @@ const products = catalogoProducts;
 ---
 
 <Layout title="Catálogo (PDF) | EPP TOTAL">
-	<main class="bg-white text-slate-900">
+	<main class="bg-white text-slate-900 pdf-doc">
 		<div class="mx-auto max-w-4xl px-10 py-12">
 			<h1 class="text-2xl font-extrabold tracking-tight mb-10">Catálogo</h1>
 
@@ -53,10 +53,20 @@ const products = catalogoProducts;
 			margin: 12mm;
 		}
 
+		.pdf-doc {
+			font-size: 0.94rem;
+			line-height: 1.55;
+		}
+
+		.pdf-doc .text-sm {
+			font-size: 0.85rem;
+			line-height: 1.45;
+		}
+
 		.product {
 			break-inside: avoid;
 			page-break-inside: avoid;
-			padding-bottom: 12mm;
+			padding-bottom: 8mm;
 			border-bottom: 1px solid #e2e8f0;
 		}
 
