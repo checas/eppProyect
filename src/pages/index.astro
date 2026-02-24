@@ -133,18 +133,19 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 
 	<div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
   
-  <div id="hero-content" class="max-w-2xl relative min-h-[500px] flex items-center">
+			<div id="hero-content" class="max-w-2xl relative min-h-[500px] flex items-start pt-32">
 
 <!-- Slide Text 0 NUEVO UNIFICADO -->
-<div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute top-0 left-0 w-full">
-  <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-serif leading-[1.1] mb-6">
+
+
+<div class="hero-content-slide opacity-100 transition-opacity duration-1000 absolute inset-0">	 
+		<h1 class="text-4xl md:text-6xl text-white font-serif leading-tight mb-8">
     Consultoría en Higiene y Seguridad 
     <span class="italic font-normal">+</span>
-    <span class="font-display font-bold text-primary block">
-      Venta de EPP Certificados
+	<span class="block font-display font-bold text-primary text-3xl md:text-5xl lg:text-6xl">      
+	Venta de Elementos de Seguridad Personal
     </span>
   </h1>
-
   <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
     Diagnosticamos riesgos, diseñamos soluciones y proveemos los equipos homologados
     que tu industria necesita. Servicio técnico y suministro en un solo lugar.
@@ -170,7 +171,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 
     <!-- Slide Text 1 -->
     <div class="hero-content-slide opacity-0 transition-opacity duration-1000 absolute inset-0">	 
-		<h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
+		<h1 class="text-5xl md:text-8xl text-white font-serif leading-tight mb-8">
 		Seguridad <span class="italic font-normal">Industrial</span> de 
 		<span class="font-display font-bold text-primary">Vanguardia</span> 
 		</h1>
@@ -195,8 +196,8 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 
     <!-- Slide Text 2 -->
     <div class="hero-content-slide opacity-0 transition-opacity duration-1000 absolute inset-0">
-      <h1 class="text-6xl md:text-8xl text-white font-serif leading-tight mb-8">
-        <span class="font-display font-bold text-primary">EPP</span> <span class="italic font-normal">Certificados</span> y Homologados
+      <h1 class="text-5xl md:text-7xl text-white font-serif leading-tight mb-7">
+        <span class="font-display font-bold text-primary">Elementos de Seguridad Personal</span> <span class="italic font-normal">Certificados</span> y Homologados
       </h1>
       <p class="text-lg text-white/70 mb-10 font-light leading-relaxed max-w-lg">
         Equipos aprobados bajo normativas vigentes que garantizan protección real y cumplimiento legal en cada entorno laboral.
@@ -264,7 +265,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 
 
 	<!-- Stats Bar -->
-	<section class="relative z-30 -mt-16 max-w-5xl mx-auto px-6">
+<!-- 	<section class="relative z-30 -mt-16 max-w-5xl mx-auto px-6">
 		<div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8">
 			<div class="text-center">
 				<div class="text-4xl font-bold text-deep-blue dark:text-white mb-1">500+</div>
@@ -284,7 +285,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 			</div>
 		</div>
 	</section>
-
+ -->
 	<!-- Services Section (Consultancy) -->
 	<section id="consultoria" class="py-32 px-6">
 		<div class="max-w-7xl mx-auto">
@@ -318,23 +319,24 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 					</div>
 				</div>
 
-				<div class="md:col-span-5 bg-deep-blue p-12 rounded-3xl relative overflow-hidden group">
+				<div class="md:col-span-5  bg-white dark:bg-zinc-900 p-12 rounded-3xl relative overflow-hidden group">
+			
 					<div class="absolute top-0 right-0 p-8">
 						<span class="material-icons text-7xl text-primary/10">domain_verification</span>
 					</div>
-					<div class="relative z-10 text-white">
 						<div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6">
 							<span class="material-icons text-primary">assignment_turned_in</span>
 						</div>
-						<h4 class="text-2xl font-bold mb-4">Programas SyH</h4>
-						<p class="text-white/60 mb-8 leading-relaxed">
-							Diseño e implementación de programas de Higiene y Seguridad.
-						</p>
+						<h4 class="text-xl font-bold mb-3 dark:text-white">Asesoramiento Técnico</h4>
+
+						<h4 class="text-2xl font-bold mb-4 dark:text-white">Programas SyH</h4>
+							<p class="text-gray-500 text-sm">
+								Diseño e implementación de programas de Higiene y Seguridad.
+							</p>
 						
-					</div>
 				</div>
 
-				<div class="md:col-span-4 bg-primary/10 p-10 rounded-3xl border border-primary/20">
+				<div class="md:col-span-4 bg-white dark:bg-zinc-900 p-10 rounded-3xl border border-primary/20">
 					<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
 						<span class="material-icons text-white">school</span>
 					</div>
@@ -371,7 +373,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
       </h2>
       <h3 class="text-5xl font-serif leading-tight mb-6">
         De la <span class="italic">Evaluación</span> a la 
-        <span class="font-display font-bold text-primary"> Provisión del EPP</span>
+        <span class="font-display font-bold text-primary"> Provisión de Elementos deSeguridad Personal</span>
       </h3>
       <p class="text-white/70 text-lg leading-relaxed">
         Diagnosticamos riesgos, diseñamos planes de acción y suministramos los equipos certificados necesarios.
@@ -396,14 +398,14 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 
       <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
         <div class="text-primary text-4xl font-bold mb-4">03</div>
-        <h4 class="font-bold mb-2">Recomendación EPP</h4>
+        <h4 class="font-bold mb-2">Recomendación Elementos de Seguridad Personal</h4>
         <p class="text-white/60 text-sm">Selección de equipos certificados según normativa vigente.</p>
       </div>
 
       <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
         <div class="text-primary text-4xl font-bold mb-4">04</div>
         <h4 class="font-bold mb-2">Venta & Entrega</h4>
-        <p class="text-white/60 text-sm">Provisión directa del EPP con asesoramiento continuo.</p>
+        <p class="text-white/60 text-sm">Provisión directa de Elementos de Seguridad Personal con asesoramiento continuo.</p>
       </div>
 
     </div>
@@ -449,7 +451,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 					</h3>
 				</div>
 				<div class="text-right">
-					<p class="text-white/60 max-w-xs mb-4">Acompañamos a las organizaciones con consultoría y provisión de EPP certificado.</p>
+					<p class="text-white/60 max-w-xs mb-4">Acompañamos a las organizaciones con consultoría y provisión de Elementos de Seguridad Personal certificado.</p>
 				</div>
 			</div>
 
@@ -461,7 +463,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 						<h4 class="text-2xl font-bold text-white mb-3">Misión</h4>
 						<p class="text-white/60 leading-relaxed">
 							Prestar servicios de consultoría especializada en materia de Higiene y Seguridad laboral, orientados a la prevención
-							de riesgos y la mejora continua de las condiciones de trabajo. Asimismo, proveer EPP certificados y homologados que
+							de riesgos y la mejora continua de las condiciones de trabajo. Asimismo, proveer Elementos de Seguridad Personal certificados y homologados que
 							cumplan con los más altos estándares y normativas vigentes.
 						</p>
 					</div>
@@ -483,7 +485,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 						<h4 class="text-2xl font-bold text-white mb-3">Propósito</h4>
 						<p class="text-white/60 leading-relaxed">
 							Contribuir activamente a la protección de los trabajadores mediante estrategias integrales de prevención de riesgos
-							laborales, complementadas con la provisión de EPP certificados; reducir la exposición a peligros, fomentar una cultura
+							laborales, complementadas con la provisión de Elementos de Seguridad Personal certificados; reducir la exposición a peligros, fomentar una cultura
 							preventiva y acompañar a las organizaciones en el cumplimiento de sus obligaciones legales.
 						</p>
 					</div>
@@ -502,7 +504,7 @@ const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComp
 							<ul class="space-y-4 text-sm text-white/60">
 								<li class="flex gap-3">
 									<span class="material-icons text-primary text-base leading-5">check_circle</span>
-									<span>Soluciones integrales: consultoría + EPP</span>
+									<span>Soluciones integrales: consultoría + Elementos de Seguridad Personal</span>
 								</li>
 								<li class="flex gap-3">
 									<span class="material-icons text-primary text-base leading-5">check_circle</span>

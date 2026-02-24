@@ -25,6 +25,7 @@ const brands = uniqueSorted(brandsRaw.filter(Boolean));
 				</a>
 				<nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
 
+					<a class="hover:text-primary transition-colors" href="/">Inicio</a>
 					<a class="hover:text-primary transition-colors border-b-2 border-primary pb-1" href="/catalogo">Catálogo</a>
 				</nav>
 			</div>
@@ -40,10 +41,14 @@ const brands = uniqueSorted(brandsRaw.filter(Boolean));
 				</div>
 			</div>
 			<div class="flex items-center gap-4 ml-6">
-				<button class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all">
-					<span class="material-icons text-sm">download</span>
-					<span class="text-sm">Catálogo PDF</span>
-				</button>
+  				<a 
+  				  href="/catalogo/catalogo.pdf"
+  				  download
+  				  class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all"
+  				>
+  				  <span class="material-icons text-sm">download</span>
+  				  <span class="text-sm">Explorar Productos</span>
+  				</a>
 			</div>
 		</div>
 	</header>
